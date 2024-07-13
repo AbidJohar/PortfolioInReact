@@ -3,7 +3,7 @@ export const ProjectsList = {
     {
       name: "Mini Projects in one page",
       description:
-        "Developed a web application with an interactive navigation bar integrating a weather app, calculator, bubble game, and image gallery. The weather app uses the OpenWeatherMap API for real-time updates, the calculator offers basic arithmetic operations, the bubble game provides interactive entertainment, and the image gallery features a responsive design with slideshow functionality. ",
+        "Developed a web application with an interactive navigation bar integrating a weather app, calculator, bubble game, and image gallery. The weather app uses the OpenWeatherMap API for real-time updates, the calculator offers basic arithmetic operations, the bubble game provides interactive entertainment, and the image gallery features a responsive design with slideshow functionality.You can easily access it as I create it using simple development tools",
       technologies: [
         "html",
         "CSS",
@@ -38,7 +38,7 @@ export const ProjectsList = {
     {
       name: "Expense tracker system",
       description:
-        "Create a React.js-based expense tracker application. The app enables users to log, categorize, and visualize their expenses with an intuitive interface and dynamic data updates. Key features include real-time expense tracking, categorization, and data visualization with charts. This project showcases my skills in React.js, state management, and creating responsive, user-friendly web applications.",
+        "Create a React.js-based expense tracker application. The app enables users to log, categorize, and visualize their expenses with an intuitive interface and dynamic data updates. Key features include real-time expense tracking, categorization, and data visualization with charts. This project showcases my skills in React.js, state management, and creating responsive, in this project i just focus on the components and it is user-friendly web applications.",
       technologies: ["React JS", "JavaScript", "Git", "GitHub"],
       link: "https://github.com/AbidJohar/ExpenseTracker"
     },
