@@ -3,7 +3,7 @@ import { UserData } from "../data/UserData";
 function Contact() {
   const { FooterLink } = UserData;
   return (
-    <div className="mb-20  lg:mt-60  h-fit  flex w-full items-center justify-center md:h-fit lg:mb-4">
+    <div className="mb-20  lg:mt-60 pt-20  h-fit  flex w-full items-center justify-center md:h-fit lg:mb-4">
       <div className="flex flex-col items-center justify-center ">
         <h2 className="pb-6 pt-12 mt-14 text-center text-3xl tracking-wider text-gray-900 lg:text-5xl">
           Get In Touch

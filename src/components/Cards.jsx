@@ -16,8 +16,9 @@ function Cards() {
       {projectsToDisplay.map((project, index) => (
         <div
           key={index}
-          className="mb-8 h-auto rounded-lg bg-transparent p-4 border-[1px] border-black shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+          className="mb-8 h-auto flex items-start flex-col justify-between  rounded-lg bg-transparent p-4 border-[1px] border-black shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
         >
+          <div>
           <h2 className="font-poppins mb-2 cursor-pointer text-base font-semibold lg:text-xl">
             {project.name}
           </h2>
@@ -31,6 +32,7 @@ function Cards() {
             >
             </span>
           </p>
+          </div>
           <div className="mt-3 flex flex-wrap lg:mt-6">
             {project.technologies.map((tech, index) => (
               <p

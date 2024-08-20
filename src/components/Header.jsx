@@ -230,7 +230,7 @@ const Header = () => {
                 onClick={() => {
                   window.open(resumeUrl);
                 }}
-                className=" w-[120px] border border-black border-1 rounded-lg px-4 py-1.5 font-bold tracking-wider text-black shadow-xl hover:border-white hover:text-white hover:bg-black"
+                className="  border border-black border-1 rounded-full px-4 py-1.5 font-bold tracking-wider text-black shadow-xl hover:border-white hover:text-white hover:bg-black"
               >
                 Resume
               </button>

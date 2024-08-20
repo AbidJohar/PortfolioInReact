@@ -1,18 +1,21 @@
 export const ProjectsList = {
   projects: [
     {
-      name: "Mini Projects in one page",
+      name: "Full stack Food delivery website",
       description:
-        "Developed a web application with an interactive navigation bar integrating a weather app, calculator, bubble game, and image gallery. The weather app uses the OpenWeatherMap API for real-time updates, the calculator offers basic arithmetic operations, the bubble game provides interactive entertainment, and the image gallery features a responsive design with slideshow functionality.You can easily access it as I create it using simple development tools",
+        "I developed a fully-fledged food delivery website with a React frontend and a Node.js + MongoDB backend. The frontend features an intuitive admin panel, secure payment gateway integration using  Stripe, dynamic cart management, and secure authentication using JWT and bcrypt. Key pages include Add Food, Order Food, Menu, and Home, all enhanced with React Toast notifications for better user interaction. The backend follows company-standard file structuring, with RESTful APIs managing CRUD operations.",
       technologies: [
-        "html",
-        "CSS",
+        "React",
+        "React-toast",
         "JavaScript",
-        "Git",
-        "GitHub",
-         
+        "nodeJs",
+        "MongoDB",
+        "RESTful APIs",
+        "JWT and Bcrypt",
+        "Express",
+        "Tailwind" 
       ],
-      link: "https://github.com/AbidJohar/Mini-Apps"
+      link: "https://github.com/AbidJohar/Food_Delivery"
     },
     {
       name: "Pinterest clone",
@@ -29,11 +32,27 @@ export const ProjectsList = {
       link: "https://github.com/AbidJohar/PinterestClone"
     },
     {
-      name: "Personal Portfolio",
+      name: "Mega Project",
       description:
-        "My portfolio is a website built with React.js and Tailwind CSS, utilizing React Router v6 to enable easy access to multiple pages. It was designed and created entirely by myself, showcasing my skills and projects. The website is responsive and visually appealing, providing a well user-friendly experience.Before creating this portfolio, I also created another Personal portfolio, you can also check it through below repository.",
+        "I developed a mega project with Appwrite as the backend, featuring secure authentication for user management. The platform allows users to add, edit, and delete blogs, with an option to view all blogs or just their personal ones. This project highlights my ability to create a secure and user-friendly blogging platform using Appwrite, ensuring efficient content management and a smooth user experience",
+      technologies: [
+        "React",
+        "Tailwind",
+        "JavaScript",
+        "Git",
+        "GitHub",
+        "Appwrite",
+        "Restfull API's",
+      ],
+      link: "https://github.com/AbidJohar/MegaProject"
+    },
+   
+    {
+      name: "Drump Machine",
+      description:
+        "I deployed an interactive drum machine using React.js, incorporating both piano and drum sound options for versatile music creation. The machine features an intuitive interface with controls for on/off switching, volume adjustment, and the ability to play sounds using keyboard keys. Users can seamlessly switch between different sound modes, providing a dynamic experience. The project showcases advanced React skills, focusing on user interaction and audio management",
       technologies: ["React JS", "Tailwind CSS", "Git", "GitHub"],
-      link: "https://github.com/AbidJohar/Portfolio"
+      link: "https://github.com/AbidJohar/Drum_Machine"
     },
     {
       name: "Expense tracker system",
