@@ -1,7 +1,7 @@
 export const UserData = {
   name: "Abid Hussain",
   about : "I'm a Mern stack developer that learned everything on my own. I specialize in creating dynamic, accessible websites that work on any device. Furthermore, I regularly create creative solutions that improve user experiences. I am proficient in React.js, Express.js,tailwind, JavaScript, HTML5, and CSS. I guarantee efficient code management and communication thanks to my knowledge with Git version control.",
-  resumeUrl : "https://www.linkedin.com/in/abid-johar786/overlay/1719261023312/single-media-viewer/?profileId=ACoAAEXjUMkBlCy8ilHgs3Fr53Ouj9F4KvTEwEQ",
+  resumeUrl : "https://www.linkedin.com/in/abid-johar786/overlay/1724481818140/single-media-viewer/?profileId=ACoAAEXjUMkBlCy8ilHgs3Fr53Ouj9F4KvTEwEQ",
   FooterLink : "https://www.linkedin.com/in/abid-johar786/",
   socialMedia: [
     {
