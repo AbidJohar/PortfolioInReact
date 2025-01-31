@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef } from "react";
 
 const CursorParticles = () => {
@@ -23,8 +22,8 @@ const CursorParticles = () => {
         this.x = mouse.current.x;
         this.y = mouse.current.y;
         this.size = Math.random() * 7 + 1;
-        this.speedX = Math.random() * 2 - 1.5; // Slower movement
-        this.speedY = Math.random() * 2 - 1.5; 
+        this.speedX = Math.random() * 1.2 - 0.6; // Slower movement
+        this.speedY = Math.random() * 1.2 - 0.6; 
         this.color = `hsl(${hue.current}, 100%, 50%)`;
         this.life = 180; // Lasts longer
       }
@@ -69,7 +68,7 @@ const CursorParticles = () => {
     const handleMouseMove = (e) => {
       mouse.current.x = e.x;
       mouse.current.y = e.y;
-      addParticles(10);
+      addParticles(7);
     };
 
     const handleClick = (e) => {

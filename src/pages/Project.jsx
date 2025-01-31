@@ -24,7 +24,7 @@ function Project() {
             }}
           >
             <span>View Full Project Archive</span>
-            <span class="absolute bottom-0 left-0 top-6 h-[2px] w-full bg-gray-900 opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span class="absolute bottom-0 left-0 top-6 h-[2px] w-full bg-white opacity-0 transition-opacity group-hover:opacity-100"></span>
           </div>
           <FaLocationArrow />
         </p>

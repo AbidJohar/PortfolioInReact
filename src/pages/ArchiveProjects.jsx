@@ -33,26 +33,26 @@ function ArchiveProjects() {
         {AllProjects.map((project, index) => (
           <div
             key={index}
-            className="mb-8 h-auto rounded-lg bg-transparent p-4 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
+            className="mb-8 h-auto  rounded-lg bg-transparent border border-white p-4 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
           >
-            <h2 className="font-poppins mb-2 cursor-pointer text-base font-semibold lg:text-xl">
+            <h2 className="font-poppins text-white mb-2 cursor-pointer text-base font-semibold lg:text-xl">
               {project.name}
             </h2>
-            <p className="font-poppins text-sm text-gray-900">
+            <p className="font-poppins text-sm text-white">
               {project.description}
             </p>
             <div className="mt-3 flex flex-wrap lg:mt-6">
               {project.technologies.map((tech, index) => (
                 <p
                   key={index}
-                  className="mb-2 mr-2 inline-block  rounded-full bg-transparent px-3 py-1 text-sm font-semibold text-gray-900 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
+                  className="mb-2 mr-2 inline-block  rounded-full bg-transparent px-3 py-1 text-sm font-semibold text-white shadow-sm shadow-white"
                 >
                   {tech}
                 </p>
               ))}
                    <div className="w-full mt-3">
         
-        <a href={project.link} className=" text-black px-4 py-2 rounded shadow-lg border-[1px] border-black bg-transparent ">
+        <a href={project.link} className=" text-white px-4 py-2 rounded shadow-lg border-[1px] border-white bg-transparent ">
           Repository
         </a>
       </div>  

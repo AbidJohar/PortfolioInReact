@@ -36,7 +36,7 @@ function Cards() {
             {project.technologies.map((tech, index) => (
               <p
                 key={index}
-                className="mb-2 mr-2 inline-block rounded-full border border-white bg-transparent px-3 py-1 text-sm font-semibold text-white shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]"
+                className="mb-2 mr-2 inline-block rounded-full  shadow-sm shadow-white bg-transparent px-3 py-1 text-sm font-semibold text-white "
               >
                 {tech}
               </p>
