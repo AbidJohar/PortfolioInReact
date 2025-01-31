@@ -10,9 +10,11 @@ export const skillsData = [
   "Bootstrap",
   "Tailwind",
   "MongoDB",
-  "ViteJS",
   "nodejs",
   "express",
+  "Microsoft Office",
+  "Python",
+  "Typescript"
 
 ];
 

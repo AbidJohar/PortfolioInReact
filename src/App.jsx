@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div className="App ">
-      {/* <Cursor /> */}
+       <Cursor />
       <Router>
         <Preloader load={load} />
         <div className="App" id={load ? "no-scroll" : "scroll"}>

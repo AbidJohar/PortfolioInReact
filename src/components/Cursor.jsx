@@ -1,66 +1,93 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
-const Cursor = () => {
-  const [mousePositions, setMousePositions] = useState([]);
-  const [isMoving, setIsMoving] = useState(false);
+const CursorParticles = () => {
+  const canvasRef = useRef(null);
+  const particlesArray = useRef([]);
+  const hue = useRef(0); 
+  const mouse = useRef({ x: undefined, y: undefined });
 
   useEffect(() => {
-    const updateMousePosition = (e) => {
-      setMousePositions((prevPositions) => [
-        { x: e.clientX, y: e.clientY },
-        ...prevPositions.slice(0, 10), // Keep only the last 10 positions
-      ]);
+    const canvas = canvasRef.current;
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    canvas.style.position = "fixed";
+    canvas.style.pointerEvents = "none";
+    canvas.style.top = "0";
+    canvas.style.left = "0";
+    canvas.style.zIndex = "-1";
+
+    class Particle {
+      constructor() {
+        this.x = mouse.current.x;
+        this.y = mouse.current.y;
+        this.size = Math.random() * 7 + 1;
+        this.speedX = Math.random() * 1.2 - 0.6; // Slower movement
+        this.speedY = Math.random() * 1.2 - 0.6; 
+        this.color = `hsl(${hue.current}, 100%, 50%)`;
+        this.life = 180; // Lasts longer
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.size > 0.3) this.size -= 0.02; // Slower size reduction
+        this.life -= 1;
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function handleParticles() {
+      for (let i = 0; i < particlesArray.current.length; i++) {
+        particlesArray.current[i].update();
+        particlesArray.current[i].draw();
+        if (particlesArray.current[i].life <= 0 || particlesArray.current[i].size <= 0.2) {
+          particlesArray.current.splice(i, 1);
+          i--;
+        }
+      }
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      handleParticles();
+      hue.current++;
+      requestAnimationFrame(animate);
+    }
+
+    const addParticles = (count) => {
+      for (let i = 0; i < count; i++) {
+        particlesArray.current.push(new Particle());
+      }
     };
 
     const handleMouseMove = (e) => {
-      setIsMoving(true);
-      requestAnimationFrame(() => {
-        updateMousePosition(e);
-        setIsMoving(false);
-      });
+      mouse.current.x = e.x;
+      mouse.current.y = e.y;
+      addParticles(10);
+    };
+
+    const handleClick = (e) => {
+      mouse.current.x = e.x;
+      mouse.current.y = e.y;
+      addParticles(50);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("click", handleClick);
+    animate();
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("click", handleClick);
     };
   }, []);
 
-  const cursorStyles = {
-    position: "fixed",
-    width: "16px",
-    height: "16px",
-    borderRadius: "50%",
-    backgroundColor: "rgba(25, 25, 25, 0.5)",
-    pointerEvents: "none",
-    zIndex: 9999,
-  };
-
-  const duplicateCursorStyles = {
-    ...cursorStyles,
-    transform: `scale(${isMoving ? 2.0 : 1})`,
-    transition: "transform 0.05s ease",
-    animation: `${isMoving ? "pulse 0.5s infinite" : ""}`,
-  };
-
-  return (
-    <>
-      {mousePositions.map((position, index) => (
-        <div
-          className="cursor"
-          key={index}
-          style={{
-            ...duplicateCursorStyles,
-            transform: `translate(${position.x - 16}px, ${position.y - 16}px) scale(${
-              1 + 0.02 * (mousePositions.length - index)
-            })`,
-            opacity: 1 - 0.1 * (mousePositions.length - index),
-          }}
-        />
-      ))}
-    </>
-  );
+  return <canvas ref={canvasRef} />;
 };
 
-export default Cursor;
+export default CursorParticles;

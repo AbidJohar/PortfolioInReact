@@ -36,204 +36,53 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-full items-center justify-between text-base transition-all sm:px-4 lg:px-28 lg:pt-2
+      className={`fixed top-0 z-50 flex w-full shadow-md shadow-white/20 items-center justify-between text-base transition-all sm:px-4 lg:px-28 lg:pt-2
       ${isScrolling ? "sticky" : ""}`}
     >
       <div className="cursor-none">
-        {/* <img
-          className="h-[80px] w-[90px] bg-cover bg-no-repeat"
-          src={logo}
-          alt="logo"
-        /> */}
-        <h3 className="font-semibold py-3 text-3xl tracking-wider">Portfolio</h3>
+        <h3 className="font-semibold py-3 text-3xl tracking-wider text-white">Portfolio</h3>
       </div>
       <nav className="hidden lg:block">
         <div className="cursor-pointer items-center space-x-4 sm:flex sm:flex-col sm:gap-4 lg:flex lg:flex-row lg:gap-6">
-          <Link
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-250}
-            duration={500}
-            to="Home-section"
-          >
-            <p
-              className={
-                activeSection === "Home-section"
-                  ? "active"
-                  : "text-white hover:text-gray-900 hover:font-bold  hover:underline underline-offset-2 "
-              }
-            >
-              Home
-            </p>
+          <Link activeClass="active" spy={true} smooth={true} offset={-250} duration={500} to="Home-section">
+            <p className={activeSection === "Home-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>Home</p>
           </Link>
-          <Link
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-150}
-            duration={500}
-            to="About-section"
-          >
-            <p
-              className={
-                activeSection === "About-section"
-                  ? "active"
-                  : "text-white hover:text-gray-900 hover:font-bold hover:underline  underline-offset-2 "
-              }
-            >
-              About
-            </p>
+          <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="About-section">
+            <p className={activeSection === "About-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>About</p>
           </Link>
-          <Link
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={-150}
-            duration={500}
-            to="Project-section"
-          >
-            <p
-              className={
-                activeSection === "Project-section"
-                  ? "active"
-                  : "text-white hover:text-gray-900 hover:font-bold   hover:underline underline-offset-4"
-              }
-            >
-              Projects
-            </p>
+          <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="Project-section">
+            <p className={activeSection === "Project-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-4"}>Projects</p>
           </Link>
-          <Link
-            activeClass="active"
-            spy={true}
-            smooth={true}
-            offset={50}
-            duration={500}
-            to="Contact-section"
-          >
-            <p
-              className={
-                activeSection === "Contact-section"
-                  ? "active"
-                  : "text-white hover:text-gray-900 hover:font-bold  hover:underline underline-offset-2"
-              }
-            >
-              Contact
-            </p>
+          <Link activeClass="active" spy={true} smooth={true} offset={50} duration={500} to="Contact-section">
+            <p className={activeSection === "Contact-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>Contact</p>
           </Link>
           <div>
-            <button
-              onClick={() => {
-                window.open(resumeUrl);
-              }}
-              className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-gray-900 shadow-xl hover:text-white"
-            >
-              Resume
-            </button>
+            <button onClick={() => window.open(resumeUrl)} className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-black bg-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
           </div>
         </div>
       </nav>
       <div className="block lg:hidden">
-        {" "}
-        {/* Show on small screens */}
-        <button
-          className="mr-5 block hover:text-gray-900 focus:outline-none"
-          onClick={toggleMobileMenu}
-        >
+        <button className="mr-5 block text-white hover:text-gray-400 focus:outline-none" onClick={toggleMobileMenu}>
           <CgMenuRight size={32} />
         </button>
       </div>
-      {/* Mobile menu */}
       {mobileMenuOpen && (
-        <nav className="absolute left-0 top-full block w-full lg:hidden">
-          <div
-            className={`navbar-bg flex flex-col items-center space-y-4 py-4`}
-          >
-            <Link
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-250}
-              duration={500}
-              to="Home-section"
-            >
-              <p
-                className={
-                  activeSection === "Home-section"
-                    ? "active"
-                    : "text-black hover:text-gray-900"
-                }
-                onClick={toggleMobileMenu}
-              >
-                Home
-              </p>
+        <nav className="absolute left-0 top-full block w-full lg:hidden bg-black">
+          <div className="navbar-bg flex flex-col items-center space-y-4 py-4">
+            <Link activeClass="active" spy={true} smooth={true} offset={-250} duration={500} to="Home-section" onClick={toggleMobileMenu}>
+              <p className={activeSection === "Home-section" ? "active" : "text-white hover:text-gray-400"}>Home</p>
             </Link>
-            <Link
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-150}
-              duration={500}
-              to="About-section"
-            >
-              <p
-                className={
-                  activeSection === "About-section"
-                    ? "active"
-                    : "text-black hover:text-gray-900"
-                }
-                onClick={toggleMobileMenu}
-              >
-                About
-              </p>
+            <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="About-section" onClick={toggleMobileMenu}>
+              <p className={activeSection === "About-section" ? "active" : "text-white hover:text-gray-400"}>About</p>
             </Link>
-            <Link
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={-150}
-              duration={500}
-              to="Project-section"
-            >
-              <p
-                className={
-                  activeSection === "Project-section"
-                    ? "active"
-                    : "text-black hover:text-gray-900"
-                }
-                onClick={toggleMobileMenu}
-              >
-                Projects
-              </p>
+            <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="Project-section" onClick={toggleMobileMenu}>
+              <p className={activeSection === "Project-section" ? "active" : "text-white hover:text-gray-400"}>Projects</p>
             </Link>
-            <Link
-              activeClass="active"
-              spy={true}
-              smooth={true}
-              offset={50}
-              duration={500}
-              to="Contact-section"
-            >
-              <p
-                className={
-                  activeSection === "Contact-section"
-                    ? "active"
-                    : "text-black hover:text-gray-900"
-                }
-                onClick={toggleMobileMenu}
-              >
-                Contact
-              </p>
+            <Link activeClass="active" spy={true} smooth={true} offset={50} duration={500} to="Contact-section" onClick={toggleMobileMenu}>
+              <p className={activeSection === "Contact-section" ? "active" : "text-white hover:text-gray-400"}>Contact</p>
             </Link>
             <div>
-              <button
-                onClick={() => {
-                  window.open(resumeUrl);
-                }}
-                className="  border border-black border-1 rounded-full px-4 py-1.5 font-bold tracking-wider text-black shadow-xl hover:border-white hover:text-white hover:bg-black"
-              >
-                Resume
-              </button>
+              <button onClick={() => window.open(resumeUrl)} className="border border-white rounded-full px-4 py-1.5 font-bold tracking-wider text-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
             </div>
           </div>
         </nav>

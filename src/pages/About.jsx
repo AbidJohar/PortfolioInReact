@@ -9,12 +9,12 @@ function About() {
   const { about } = UserData;
   return (
     <div className="mb-24 h-auto w-full sm:mb-0 md:h-screen">
-      <div className="mx-auto flex w-[90%] flex-col justify-between rounded-xl border border-black border-spacing-2 bg-transparent p-4 shadow-lg md:flex-row md:items-center">
+      <div className="mx-auto flex w-[90%] flex-col justify-between rounded-xl border border-white border-spacing-2 bg-transparent p-4 shadow-lg md:flex-row md:items-center">
         <div className="flex w-full flex-col md:w-[50%]">
-          <p className="pb-2 text-2xl font-semibold tracking-wide text-gray-900">
+          <p className="pb-2 text-2xl font-semibold tracking-wide text-white">
             About Me
           </p>
-          <p className="font-poppins text-sm lg:text-base">{about}</p>
+          <p className="font-poppins text-sm  lg:text-base">{about}</p>
           <div className="mt-8">
             <Marquee
               gradient={false}

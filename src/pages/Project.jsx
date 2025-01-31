@@ -7,7 +7,7 @@ function Project() {
   return (
     <div className="mb-24 h-auto w-full sm:mb-0 md:h-screen">
       <div>
-        <h3 className="font-poppins mx-auto w-[50%] pb-10 pt-8 font-bold text-center text-4xl tracking-wider text-gray-900 lg:text-4xl">
+        <h3 className="font-poppins mx-auto w-[50%] pb-10 pt-8 font-bold text-center text-4xl tracking-wider text-white lg:text-4xl">
           Projects
         </h3>
       </div>
@@ -16,7 +16,7 @@ function Project() {
       </div>
       
       <div className="mx-auto w-[90%]">
-        <p className="flex cursor-pointer items-center gap-2 font-semibold leading-tight text-gray-900">
+        <p className="flex cursor-pointer items-center gap-2 font-semibold leading-tight text-white">
           <div
             class="font-poppins group relative"
             onClick={() => {
