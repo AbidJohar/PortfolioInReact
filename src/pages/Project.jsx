@@ -18,13 +18,13 @@ function Project() {
       <div className="mx-auto w-[90%]">
         <p className="flex cursor-pointer items-center gap-2 font-semibold leading-tight text-white">
           <div
-            class="font-poppins group relative"
+            className="font-poppins group relative"
             onClick={() => {
               navigate("/projectlist");
             }}
           >
             <span>View Full Project Archive</span>
-            <span class="absolute bottom-0 left-0 top-6 h-[2px] w-full bg-white opacity-0 transition-opacity group-hover:opacity-100"></span>
+            <span className="absolute bottom-0 left-0 top-6 h-[2px] w-full bg-white opacity-0 transition-opacity group-hover:opacity-100"></span>
           </div>
           <FaLocationArrow />
         </p>

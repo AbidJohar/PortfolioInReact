@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import TypewriterText from "../components/TypewriterText";
 import { UserData } from "../data/UserData";
@@ -58,7 +59,7 @@ function Home() {
           />
         </div>
       </div>
-      <hr className="w-75% mx-10 mt-16 h-[2px] bg-slate-50 opacity-10 shadow-md" />
+      <hr className="w-75% mx-10 mt-16 h-[2px] bg-slate-50 opacity-9 shadow-md" />
     </div>
     
   );
