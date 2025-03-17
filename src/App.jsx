@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App ">
        <Cursor />
-      <Router>
+      <Router basename="/PortfolioInReact">
         <Preloader load={load} />
         <div className="App" id={load ? "no-scroll" : "scroll"}>
           <ScrollToTopOnRouteChange />

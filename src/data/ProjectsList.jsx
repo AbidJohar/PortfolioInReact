@@ -1,7 +1,7 @@
 export const ProjectsList = {
   projects: [
     {
-      name: "Full stack Food delivery website",
+      name: "🍔 Full stack Food delivery website",
       description:
         "I developed a fully-fledged food delivery website with a React frontend and a Node.js + MongoDB backend. The frontend features an intuitive admin panel, secure payment gateway integration using  Stripe, dynamic cart management, and secure authentication using JWT and bcrypt. Key pages include Add Food, Order Food, Menu, and Home, all enhanced with React Toast notifications for better user interaction. The backend follows company-standard file structuring, with RESTful APIs managing CRUD operations.",
       technologies: [
@@ -12,6 +12,24 @@ export const ProjectsList = {
         "MongoDB",
         "RESTful APIs",
         "JWT and Bcrypt",
+        "Express",
+        "Tailwind" 
+      ],
+      link: "https://github.com/AbidJohar/Food_Delivery"
+    },
+    {
+      name: "🛒 Full stack E-Shop web site",
+      description:
+        "A fully functional e-commerce web application built using the MERN stack (MongoDB, Express, React, Node.js). Developed it by following the industry coding standards, this project ensures clean, scalable, and maintainable code Features: Secure authentication & authorization, Product management (CRUD operations)Shopping cart functionality,Real time order tracking,Admin panel, Order processing & payment integration COD, Responsive UI for a seamless user experience. Built with best practices to deliver a high-performance and modern e-commerce solution. 🚀",
+      technologies: [
+        "React",
+        "MongoDB",
+        "React-toast",
+        "nodeJs",
+        "JavaScript",
+        "RESTful APIs",
+        "JWT and Bcrypt",
+        "cloudinary",
         "Express",
         "Tailwind" 
       ],
@@ -30,6 +48,22 @@ export const ProjectsList = {
         "MongoDB",
       ],
       link: "https://github.com/AbidJohar/PinterestClone"
+    },
+    {
+      name: "💬 Real-Time simple Chat App – Built with MERN & Socket.io",
+      description:
+        "A  real-time chat application developed using the MERN stack  and Socket.io to enhance real-time communication. Features: One-to-One Messaging – Private chats with seamless real-time updates One-to-Many Messaging – Group chat functionality for engaging conversations Real-Time Notifications – Live notification counter for new messages Optimized with Socket.io",
+      technologies: [
+        "React",
+        "Socket.io",
+        "CSS",
+        "JavaScript",
+        "Git",
+        "GitHub",
+        "Express",
+        "Node.js",
+      ],
+      link: "https://github.com/AbidJohar/MegaProject"
     },
     {
       name: "Mega Project",

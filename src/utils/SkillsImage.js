@@ -70,6 +70,7 @@ import picsart from "../Assets/svg/skills/picsart.svg";
 import sketch from "../Assets/svg/skills/sketch.svg";
 import unity from "../Assets/svg/skills/unity.svg";
 import wolframalpha from "../Assets/svg/skills/wolframalpha.svg";
+import electronjsicon from "../Assets/svg/skills/electronjs-icon.svg";
 
 import canva from "../Assets/svg/skills/canva.svg";
 import nodejs from '../Assets/svg/skills/node-js.svg';
@@ -94,6 +95,8 @@ export const skillsImage = (skill) => {
       return afterEffects;
     case "css":
       return css;
+    case "electron.js":
+      return electronjsicon;
     case "angular":
       return angular;
     case "javascript":

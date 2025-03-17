@@ -14,7 +14,8 @@ export const skillsData = [
   "express",
   "Microsoft Office",
   "Python",
-  "Typescript"
+  "Typescript",
+  "Electron.js"
 
 ];
 

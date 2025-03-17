@@ -32,6 +32,7 @@ export const UserData = {
       "Front End Developer",
       "Back End Developer",
       "React Js Developer",
+      "Prompt Engineer",
       "JavaScript Developer",
     ],
     autoStart: true,
