@@ -24,7 +24,8 @@ const CursorParticles = () => {
         this.size = Math.random() * 7 + 1;
         this.speedX = Math.random() * 1.2 - 0.6; // Slower movement
         this.speedY = Math.random() * 1.2 - 0.6; 
-        this.color = `hsl(${hue.current}, 100%, 50%)`;
+        // this.color = `hsl(${hue.current}, 100%, 50%)`;
+        this.color = '#ffffff'
         this.life = 180; // Lasts longer
       }
       update() {
