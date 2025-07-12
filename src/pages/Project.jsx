@@ -4,32 +4,29 @@ import { useNavigate } from "react-router-dom";
 
 function Project() {
   const navigate = useNavigate();
+
   return (
-    <div className="mb-24 h-auto w-full sm:mb-0 md:h-screen">
-      <div>
-        <h3 className="font-poppins mx-auto w-[50%] pb-10 pt-8 font-bold text-center text-4xl tracking-wider text-white lg:text-4xl">
+    <div className="w-full min-h-screen  py-2">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h3 className="font-poppins text-3xl sm:text-4xl font-bold text-center text-white tracking-wider mb-10">
           Projects
         </h3>
-      </div>
-      <div className="mx-auto mb-2 grid w-[90%] grid-cols-1 gap-4 sm:mb-8 md:grid-cols-2">
-        <Cards />
-      </div>
-      
-      <div className="mx-auto w-[90%]">
-        <p className="flex cursor-pointer items-center gap-2 font-semibold leading-tight text-white">
-          <div
-            className="font-poppins group relative"
-            onClick={() => {
-              navigate("/projectlist");
-            }}
+        <div className="w-full">
+          <Cards />
+        </div>
+        <div className="mt-8 flex justify-center">
+          <p
+            className="flex cursor-pointer items-center gap-2 font-semibold text-white hover:text-blue-400 transition-colors"
+            onClick={() => navigate("/projectlist")}
           >
-            <span>View Full Project Archive</span>
-            <span className="absolute bottom-0 left-0 top-6 h-[2px] w-full bg-white opacity-0 transition-opacity group-hover:opacity-100"></span>
-          </div>
-          <FaLocationArrow />
-        </p>
+            <span className="font-poppins relative group">
+              View Full Project Archive
+              <span className="absolute bottom-0 left-0 h-[2px] w-full bg-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            </span>
+            <FaLocationArrow />
+          </p>
+        </div>
       </div>
-      
     </div>
   );
 }

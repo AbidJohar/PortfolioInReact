@@ -1,58 +1,61 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React from "react";
 import { ProjectsList } from "../data/ProjectsList";
+import { useNavigate } from "react-router-dom";
 
-function Cards() {
-  const [showFullDescription, setShowFullDescription] = useState(null);
-  const projectsToDisplay = ProjectsList.projects.slice(0, 4);
+function Cards({showAllProjects}) {
+  const navigate = useNavigate();
+  const projectsToDisplay = showAllProjects ? ProjectsList.projects :  ProjectsList.projects.slice(0, 6);
 
-  const toggleDescription = (index) => {
-    console.log("clicking description", index);
-
-    setShowFullDescription(index === showFullDescription ? null : index);
+  const handleCardClick = (projectId) => {
+    navigate(`/project/${projectId}`);
   };
 
   return (
-    <>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
       {projectsToDisplay.map((project, index) => (
         <div
           key={index}
-          className="mb-8 flex h-auto flex-col items-start justify-between  rounded-lg border-[1px] border-white bg-transparent p-4 shadow-md hover:shadow-white/60 "
+          className="group relative h-full bg-gray-800 bg-opacity-80 backdrop-blur-md rounded-xl border border-gray-600 p-8 shadow-lg hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 cursor-pointer transform hover:-translate-y-2"
+          onClick={() => handleCardClick(index)}
         >
-          <div>
-            <h2 className="font-poppins mb-2 cursor-pointer text-base font-semibold lg:text-xl">
-              {project.name}
-            </h2>
-            <p className="font-poppins text-sm text-white">
-              {showFullDescription === index
-                ? project.description
-                : project.description.substring(0, 520)}
-              <span
-                className="ml-[5px] cursor-pointer"
-                onClick={() => toggleDescription(index)}
-              ></span>
-            </p>
-          </div>
-          <div className="mt-3 flex flex-wrap lg:mt-6">
-            {project.technologies.map((tech, index) => (
-              <p
-                key={index}
-                className="mb-2 mr-2 inline-block rounded-full  shadow-sm shadow-white bg-transparent px-3 py-1 text-sm font-semibold text-white "
-              >
-                {tech}
+          <div className="flex flex-col h-full justify-between">
+            {/* Card Content */}
+            <div>
+              <h2 className="font-poppins text-xl lg:text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                {project.name}
+              </h2>
+              <p className="font-poppins text-sm text-gray-300 line-clamp-3 mb-4">
+                {project.description}
               </p>
-            ))}
-           <div className="w-full mt-3">
-  <a
-    href={project.link}
-    className="text-white px-4 py-2 rounded shadow-lg border-[1px] border-white bg-transparent transition-all duration-700   hover:shadow-[2px_3px_whitesmoke] hover:-translate-y-2"
-  >
-    Repository
-  </a>
-</div>
+
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.technologies.map((tech, techIndex) => (
+                  <span
+                    key={techIndex}
+                    className="px-3 py-1 text-xs font-semibold text-white bg-blue-600 rounded-full shadow-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Call to Action (Always at Bottom) */}
+            <div className="flex items-center justify-between">
+              <span className="text-blue-400 font-semibold text-sm group-hover:underline">
+                View Details
+              </span>
+            </div>
           </div>
+
+          {/* Hover Overlay */}
+          <div className="absolute inset-0 bg-blue-500 bg-opacity-0 group-hover:bg-opacity-10 transition-opacity duration-300 rounded-xl"></div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
 

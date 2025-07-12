@@ -1,64 +1,33 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import { ProjectsList } from "../data/ProjectsList";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import  Cards from '../components/Cards';
 
 function ArchiveProjects() {
   const navigate = useNavigate();
-  const AllProjects = ProjectsList.projects;
+
   return (
-    <div className="h-auto w-full ">
-      <div
-        onClick={() => {
-          navigate(-1);
-        }}
-        className="ml-[5%] hidden gap-2 pt-8 hover:text-white lg:flex lg:items-center "
-      >
-        <FaArrowLeft />
-        <span
-          className="cursor-pointer"
-          onClick={() => {
-            navigate(-1);
-          }}
+    <div className="w-full min-h-screen bg-gray-900 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Back to Portfolio Link */}
+        <div
+          onClick={() => navigate(-1)}
+          className="flex items-center gap-2 text-white hover:text-blue-400 cursor-pointer mb-8 lg:mb-10"
         >
-          Portfolio
-        </span>
-      </div>
-      <div className="mx-auto flex w-[90%] items-center justify-center pb-8 pt-2 lg:p-4 lg:pt-4">
-        <div className="font-poppins text-center  text-2xl">
-          The project I work on
+          <FaArrowLeft />
+          <span className="font-poppins font-semibold">Back to Portfolio</span>
         </div>
-      </div>
-      <div className="mx-auto mb-2 grid w-[90%] grid-cols-1 gap-4 sm:mb-8 md:grid-cols-2">
-        {AllProjects.map((project, index) => (
-          <div
-            key={index}
-            className="mb-8 h-auto  rounded-lg bg-transparent border border-white p-4 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]"
-          >
-            <h2 className="font-poppins text-white mb-2 cursor-pointer text-base font-semibold lg:text-xl">
-              {project.name}
-            </h2>
-            <p className="font-poppins text-sm text-white">
-              {project.description}
-            </p>
-            <div className="mt-3 flex flex-wrap lg:mt-6">
-              {project.technologies.map((tech, index) => (
-                <p
-                  key={index}
-                  className="mb-2 mr-2 inline-block  rounded-full bg-transparent px-3 py-1 text-sm font-semibold text-white shadow-sm shadow-white"
-                >
-                  {tech}
-                </p>
-              ))}
-                   <div className="w-full mt-3">
-        
-        <a href={project.link} className=" text-white px-4 py-2 rounded shadow-lg border-[1px] border-white bg-transparent ">
-          Repository
-        </a>
-      </div>  
-            </div>
-          </div>
-        ))}
+
+        {/* Heading */}
+        <div className="flex justify-center mb-8">
+          <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-white tracking-wider text-center">
+            All Projects
+          </h1>
+        </div>
+
+        {/* Cards Component */}
+        <Cards showAllProjects={true} />
       </div>
     </div>
   );

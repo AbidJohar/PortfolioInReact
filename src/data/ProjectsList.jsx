@@ -1,58 +1,130 @@
+import {
+  Eshop1,
+  Eshop2,
+  Eshop3,
+  Eshop4,
+  Eshop5,
+  Eshop6,
+  Eshop7,
+  Eshop8,
+  Eshop9,
+  Eshop10,
+  Eshop11,
+  Eshop12,
+  Eshop13,
+  Eshop14,
+  Eshop15,
+  Eshop16,
+  Eshop17,
+  Eshop18,
+  Eshop19
+} from "../utils/ProjectImages";
+
+
 export const ProjectsList = {
   projects: [
-    {
-      name: "🍔 Full stack Food delivery website",
+     {
+      name: "🛒 Full Stack E-Shop Website + Admin Panel",
       description:
-        "I developed a fully-fledged food delivery website with a React frontend and a Node.js + MongoDB backend. The frontend features an intuitive admin panel, secure payment gateway integration using  Stripe, dynamic cart management, and secure authentication using JWT and bcrypt. Key pages include Add Food, Order Food, Menu, and Home, all enhanced with React Toast notifications for better user interaction. The backend follows company-standard file structuring, with RESTful APIs managing CRUD operations.",
-      technologies: [
-        "React",
-        "React-toast",
-        "JavaScript",
-        "nodeJs",
-        "MongoDB",
-        "RESTful APIs",
-        "JWT and Bcrypt",
-        "Express",
-        "Tailwind" 
-      ],
-      link: "https://github.com/AbidJohar/Food_Delivery"
-    },
-    {
-      name: "🛒 Full stack E-Shop web site",
-      description:
-        "A fully functional e-commerce web application built using the MERN stack (MongoDB, Express, React, Node.js). Developed it by following the industry coding standards, this project ensures clean, scalable, and maintainable code Features: Secure authentication & authorization, Product management (CRUD operations)Shopping cart functionality,Real time order tracking,Admin panel, Order processing & payment integration COD, Responsive UI for a seamless user experience. Built with best practices to deliver a high-performance and modern e-commerce solution. 🚀",
+        "A complete e-commerce platform built with the MERN stack, allowing customers to browse products, add them to the cart, and place orders. Admins can manage products, track orders, and update product information. The website supports both Stripe and Cash on Delivery payments and ensures secure user authentication and responsive design.",
       technologies: [
         "React",
         "MongoDB",
         "React-toast",
-        "nodeJs",
+        "Node.js",
         "JavaScript",
         "RESTful APIs",
         "JWT and Bcrypt",
-        "cloudinary",
+        "Cloudinary",
         "Express",
-        "Tailwind" 
+        "Tailwind"
+      ],
+        images: [
+    Eshop1,
+    Eshop2,
+    Eshop3,
+    Eshop4,
+    Eshop5,
+    Eshop6,
+    Eshop7,
+    Eshop8,
+    Eshop9,
+    Eshop10,
+    Eshop11,
+    Eshop12,
+    Eshop13,
+    Eshop14,
+    Eshop15,
+    Eshop16,
+    Eshop17,
+    Eshop18,
+    Eshop19
+  ],
+      features: [
+        "Secure authentication & authorization",
+        "Product management with full CRUD operations",
+        "Shopping cart functionality",
+        "Real-time order tracking",
+        "Admin dashboard for managing products and orders",
+        "Cash on Delivery (COD) payment support",
+        "Fully responsive UI for all devices"
       ],
       link: "https://github.com/AbidJohar/Food_Delivery"
     },
+  
+
     {
-      name: "Pinterest clone",
+      name: "🍔 Full Stack Food Delivery Website",
       description:
-        "Developed an pinterest clone with key features including user authentication (login, sign-up, and logout), profile updates, photo uploads, and photo viewing. This project demonstrates proficiency in web development, user authentication, and handling multimedia content, showcasing my ability to build and deploy main-featured web applications.",
+        "I developed a fully-fledged food delivery website using the MERN stack. The project includes both admin and customer-facing features, allowing users to browse menus, add items to a cart, and place orders, while the admin can manage food items, view orders, and update the menu. The platform is styled using Tailwind CSS and includes secure authentication.",
+      technologies: [
+        "React",
+        "React-toast",
+        "JavaScript",
+        "Node.js",
+        "MongoDB",
+        "RESTful APIs",
+        "JWT and Bcrypt",
+        "Express",
+        "Tailwind"
+      ],
+      images: [],
+      features: [
+        "Admin panel with Add Food, Order Food, and Menu pages",
+        "Stripe payment gateway integration",
+        "Dynamic cart functionality",
+        "Secure JWT authentication with password hashing using bcrypt",
+        "RESTful APIs for CRUD operations",
+        "React Toast notifications for better UX",
+        "Company-standard file structure on the backend"
+      ],
+      link: "https://github.com/AbidJohar/Food_Delivery"
+    },
+     {
+      name: "📌 Pinterest Clone",
+      description:
+        "A clone of Pinterest built using EJS and MongoDB. It includes all core functionalities such as user authentication, image uploads, and browsing. Users can create profiles, upload photos, and manage their own content. The backend is powered by Express.js and MongoDB for data storage.",
       technologies: [
         "EJS",
-        "Javascript",
+        "JavaScript",
         "Express",
         "CSS",
         "GitHub",
-        "MongoDB",
+        "MongoDB"
+      ],
+      images: [],
+      features: [
+        "User authentication: login, sign-up, logout",
+        "Profile updates and photo uploads",
+        "Image viewing and browsing functionality",
+        "MongoDB backend for user and media storage"
       ],
       link: "https://github.com/AbidJohar/PinterestClone"
     },
     {
-      name: "💬 Real-Time simple Chat App – Built with MERN & Socket.io",
+      name: "💬 Real-Time Chat App (MERN + Socket.io)",
       description:
-        "A  real-time chat application developed using the MERN stack  and Socket.io to enhance real-time communication. Features: One-to-One Messaging – Private chats with seamless real-time updates One-to-Many Messaging – Group chat functionality for engaging conversations Real-Time Notifications – Live notification counter for new messages Optimized with Socket.io",
+        "This is a real-time chat application that allows users to send and receive messages instantly. Built with the MERN stack and Socket.io, it supports both private and group chats. The app provides real-time message updates, notifications, and a responsive user interface.",
       technologies: [
         "React",
         "Socket.io",
@@ -61,14 +133,21 @@ export const ProjectsList = {
         "Git",
         "GitHub",
         "Express",
-        "Node.js",
+        "Node.js"
+      ],
+      images: [],
+      features: [
+        "One-to-one private messaging",
+        "Group chat (one-to-many messaging)",
+        "Real-time updates using Socket.io",
+        "Live notification counter for new messages"
       ],
       link: "https://github.com/AbidJohar/MegaProject"
     },
     {
-      name: "Mega Project",
+      name: "📝 Mega Blog Project (with Appwrite)",
       description:
-        "I developed a mega project with Appwrite as the backend, featuring secure authentication for user management. The platform allows users to add, edit, and delete blogs, with an option to view all blogs or just their personal ones. This project highlights my ability to create a secure and user-friendly blogging platform using Appwrite, ensuring efficient content management and a smooth user experience",
+        "A powerful blogging platform using Appwrite as the backend service. Users can securely register, login, and manage blog posts. The project supports CRUD operations for blogs, filters for personal and all-user views, and a fully styled responsive frontend using Tailwind CSS.",
       technologies: [
         "React",
         "Tailwind",
@@ -76,56 +155,88 @@ export const ProjectsList = {
         "Git",
         "GitHub",
         "Appwrite",
-        "Restfull API's",
+        "RESTful APIs"
+      ],
+      images: [],
+      features: [
+        "Secure user authentication with Appwrite",
+        "Blog management: Add, edit, delete blogs",
+        "Filter view for personal or all user blogs",
+        "Efficient content management system"
       ],
       link: "https://github.com/AbidJohar/MegaProject"
     },
-   
     {
-      name: "Drump Machine",
+      name: "🥁 Drum Machine",
       description:
-        "I deployed an interactive drum machine using React.js, incorporating both piano and drum sound options for versatile music creation. The machine features an intuitive interface with controls for on/off switching, volume adjustment, and the ability to play sounds using keyboard keys. Users can seamlessly switch between different sound modes, providing a dynamic experience. The project showcases advanced React skills, focusing on user interaction and audio management",
+        "An interactive drum machine built using React.js, offering a fun musical experience. Users can switch between drum and piano modes, control volume, and trigger sounds using keyboard keys. The app has a visually appealing and responsive design.",
       technologies: ["React JS", "Tailwind CSS", "Git", "GitHub"],
+      images: [],
+      features: [
+        "Piano and drum sound modes",
+        "Toggle switch for power on/off",
+        "Volume control",
+        "Keyboard key sound mapping",
+        "Interactive and responsive UI"
+      ],
       link: "https://github.com/AbidJohar/Drum_Machine"
     },
     {
-      name: "Expense tracker system",
+      name: "💸 Expense Tracker System",
       description:
-        "Create a React.js-based expense tracker application. The app enables users to log, categorize, and visualize their expenses with an intuitive interface and dynamic data updates. Key features include real-time expense tracking, categorization, and data visualization with charts. This project showcases my skills in React.js, state management, and creating responsive, in this project i just focus on the components and it is user-friendly web applications.",
+        "A personal finance management application built with React.js that allows users to track income and expenses. It includes real-time data updates and visualizes data with interactive charts. The app is structured using clean, reusable components.",
       technologies: ["React JS", "JavaScript", "Git", "GitHub"],
+      images: [],
+      features: [
+        "Log and categorize expenses",
+        "Real-time tracking and dynamic data updates",
+        "Data visualization using charts",
+        "Clean component-based architecture in React"
+      ],
       link: "https://github.com/AbidJohar/ExpenseTracker"
     },
     {
-      name: "BookStore",
+      name: "📚 BookStore Web App",
       description:
-        "Deploy a Book Store web application to enhance backend skills using Postman and Node.js, with a frontend built in React.js utilizing various libraries like Chakra UI. Implemented secure login and sign-in functions. Although the project is not yet complete, it serves as a learning experience in building an industry-standard project structure, integrating both frontend and backend development.",
-      technologies: ["React", "node.js", "JavaScript","API","Postman","Chakra UI"],
+        "A full-stack Book Store web application where users can register, login, and browse books. The backend is built with Node.js and tested using Postman. The frontend is styled with Chakra UI and is designed for scalability and clean API integration.",
+      technologies: ["React", "Node.js", "JavaScript", "API", "Postman", "Chakra UI"],
+      images: [],
+      features: [
+        "Secure login and signup",
+        "Backend API integration using Node.js",
+        "Postman testing for API endpoints",
+        "Frontend styled using Chakra UI",
+        "Ongoing project with scalable architecture"
+      ],
       link: "https://github.com/AbidJohar/BookStoreWeb"
     },
     {
-      name: "Crud Operation",
+      name: "🛠️ CRUD Operation App",
       description:
-        "A CRUD operation project is created using EJS for the frontend and Node.js for the backend. Implemented splash screen, allowing users to create, read, update, and delete records. This project served as a practical exercise in full-stack development and applying industry-standard practices.",
-      technologies: [
-        "EJS",
-        "CSS",
-        "Git",
-        "GitHub",
+        "A basic full-stack CRUD application using EJS for templating and Node.js for backend logic. The app allows users to perform Create, Read, Update, and Delete operations with a splash screen and a clean, minimal UI design.",
+      technologies: ["EJS", "CSS", "Git", "GitHub"],
+      images: [],
+      features: [
+        "Create, Read, Update, and Delete operations",
+        "Splash screen feature on load",
+        "Simple and clean user interface",
+        "Practical demonstration of full-stack app development"
       ],
       link: "https://github.com/AbidJohar/Crud-s-Operation"
     },
     {
-      name: "Product Design website",
+      name: "🖥️ Product Design Website",
       description:
-        "Developed a product design website using HTML, CSS, and JavaScript to enhance web development skills. The website features a responsive layout, interactive elements, and user-friendly navigation, showcasing various product designs. This project helped improve proficiency in front-end technologies and design principles.",
-      technologies: [
-         "HTML",
-        "CSS",
-        "JavaScript",
-        "Git",
-        "GitHub"
+        "A frontend project showcasing various product designs using HTML, CSS, and JavaScript. It includes a fully responsive layout and interactive elements to highlight different product samples. This project emphasizes UI/UX design fundamentals.",
+      technologies: ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
+      images: [],
+      features: [
+        "Responsive layout design",
+        "Interactive UI elements",
+        "Display of multiple product design samples",
+        "Frontend focus using HTML, CSS, JavaScript"
       ],
       link: "https://github.com/AbidJohar/Product-designer-website"
-    },
-  ],
+    }
+  ]
 };

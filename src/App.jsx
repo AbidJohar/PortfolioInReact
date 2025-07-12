@@ -13,6 +13,7 @@ import Layout from "./pages/Layout";
 import ArchiveProjects from "./pages/ArchiveProjects";
 import NotFound from "./pages/NotFound";
 import "./App.css";
+import ProjectDetail from "./pages/ProjectDetails";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -46,6 +47,7 @@ function App() {
             <Route path="/" element={<Layout />} />
             <Route path="/about" element={<About />} />
             <Route path="/projectlist" element={<ArchiveProjects />} />
+            <Route path="/project/:projectId" element={<ProjectDetail />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/*" element={<NotFound />} />
           </Routes>

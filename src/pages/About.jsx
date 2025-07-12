@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { UserData } from "../data/UserData";
 import Marquee from "react-fast-marquee";
@@ -14,7 +15,10 @@ function About() {
           <p className="pb-2 text-2xl font-semibold tracking-wide text-white">
             About Me
           </p>
-          <p className="font-poppins text-sm  lg:text-base">{about}</p>
+        
+          <p  className="font-poppins text-sm   lg:text-base" style={{'textAlign': "justify"}}>{about}</p>
+
+        
           <div className="mt-8">
             <Marquee
               gradient={false}

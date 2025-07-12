@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useRef } from "react";
 
 const CursorParticles = () => {
   const canvasRef = useRef(null);
   const particlesArray = useRef([]);
-  const hue = useRef(0); 
-  const mouse = useRef({ x: undefined, y: undefined });
+  const hue = useRef(0);
+  const mouse = useRef({ x: null, y: null });
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -15,23 +16,29 @@ const CursorParticles = () => {
     canvas.style.pointerEvents = "none";
     canvas.style.top = "0";
     canvas.style.left = "0";
-    canvas.style.zIndex = "-1";
+    canvas.style.zIndex = "-1"; // Make visible on top
+
+    // Handle resizing
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+    window.addEventListener("resize", resizeCanvas);
 
     class Particle {
       constructor() {
         this.x = mouse.current.x;
         this.y = mouse.current.y;
-        this.size = Math.random() * 7 + 1;
-        this.speedX = Math.random() * 1.2 - 0.6; // Slower movement
-        this.speedY = Math.random() * 1.2 - 0.6; 
-        // this.color = `hsl(${hue.current}, 100%, 50%)`;
-        this.color = '#ffffff'
-        this.life = 180; // Lasts longer
+        this.size = Math.random() * 5 + 1;
+        this.speedX = Math.random() * 2 - 1;
+        this.speedY = Math.random() * 2 - 1;
+        this.color = "#ffffff";
+        this.life = 60; // Shorter life
       }
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
-        if (this.size > 0.3) this.size -= 0.02; // Slower size reduction
+        if (this.size > 0.2) this.size -= 0.1; // faster shrink
         this.life -= 1;
       }
       draw() {
@@ -42,40 +49,58 @@ const CursorParticles = () => {
       }
     }
 
-    function handleParticles() {
+    const handleParticles = () => {
       for (let i = 0; i < particlesArray.current.length; i++) {
-        particlesArray.current[i].update();
-        particlesArray.current[i].draw();
-        if (particlesArray.current[i].life <= 0 || particlesArray.current[i].size <= 0.2) {
+        const p = particlesArray.current[i];
+        p.update();
+        p.draw();
+
+        // Draw lines between close particles
+        for (let j = i + 1; j < particlesArray.current.length; j++) {
+          const dx = p.x - particlesArray.current[j].x;
+          const dy = p.y - particlesArray.current[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          if (distance < 80) {
+            ctx.beginPath();
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.1)";
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(particlesArray.current[j].x, particlesArray.current[j].y);
+            ctx.stroke();
+          }
+        }
+
+        // Remove dead particles
+        if (p.life <= 0 || p.size <= 0.2) {
           particlesArray.current.splice(i, 1);
           i--;
         }
       }
-    }
+    };
 
-    function animate() {
+    const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       handleParticles();
       hue.current++;
       requestAnimationFrame(animate);
-    }
+    };
 
     const addParticles = (count) => {
+      if (mouse.current.x === null || mouse.current.y === null) return;
       for (let i = 0; i < count; i++) {
         particlesArray.current.push(new Particle());
       }
     };
 
     const handleMouseMove = (e) => {
-      mouse.current.x = e.x;
-      mouse.current.y = e.y;
-      addParticles(7);
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+      addParticles(5); // Reduce count for smoother render
     };
 
     const handleClick = (e) => {
-      mouse.current.x = e.x;
-      mouse.current.y = e.y;
-      addParticles(50);
+      mouse.current.x = e.clientX;
+      mouse.current.y = e.clientY;
+      addParticles(20);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -85,6 +110,7 @@ const CursorParticles = () => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("click", handleClick);
+      window.removeEventListener("resize", resizeCanvas);
     };
   }, []);
 
