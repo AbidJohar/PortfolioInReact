@@ -100,7 +100,7 @@ const CursorParticles = () => {
     const handleClick = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
-      addParticles(20);
+      addParticles(15);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
