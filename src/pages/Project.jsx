@@ -6,7 +6,7 @@ function Project() {
   const navigate = useNavigate();
 
   return (
-    <div className="w-full min-h-screen  py-2">
+    <div className="w-full min-h-screen  py-6">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3 className="font-poppins text-3xl sm:text-4xl font-bold text-center text-white tracking-wider mb-10">
           Projects

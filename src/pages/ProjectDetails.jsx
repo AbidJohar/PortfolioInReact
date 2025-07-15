@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ProjectsList } from "../data/ProjectsList";
+import { motion, AnimatePresence } from "framer-motion";
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -13,42 +14,60 @@ function ProjectDetail() {
 
   const handlePrev = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? project.images.length - 1 : prevIndex - 1,
     );
   };
 
   const handleNext = () => {
     setCurrentIndex((prevIndex) =>
-      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === project.images.length - 1 ? 0 : prevIndex + 1,
     );
   };
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex min-h-screen items-center justify-center bg-gray-900"
+      >
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Project Not Found</h2>
+          <h2 className="font-poppins mb-6 text-3xl font-bold text-white">
+            Project Not Found
+          </h2>
           <button
             onClick={() => navigate(-1)}
-            className="px-4 py-2 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all"
+            className="rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg"
           >
             Go Back
           </button>
         </div>
-      </div>
+      </motion.div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-[80%] mx-auto">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-gray-900 px-4 py-16 sm:px-6 lg:px-8"
+    >
+      <div className="mx-auto max-w-6xl">
         {/* Back Button */}
-        <button
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={() => navigate(-1)}
-          className="mb-6 text-blue-400 hover:underline flex items-center"
+          className="mb-8 flex items-center text-blue-400 transition-colors hover:text-blue-300"
         >
           <svg
-            className="w-5 h-5 mr-2"
+            className="mr-2 h-6 w-6"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -61,87 +80,167 @@ function ProjectDetail() {
             />
           </svg>
           Back to Projects
-        </button>
+        </motion.button>
 
         {/* Project Header */}
-        <h1 className="font-poppins text-3xl lg:text-4xl font-bold text-white mb-6">
+        <motion.h1
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6 }}
+          className="font-poppins mb-8 text-2xl font-bold text-white lg:text-4xl"
+        >
           {project.name}
-        </h1>
+        </motion.h1>
 
-        {/* Project Image Slider */}
-          <h2 className="text-2xl font-semibold text-white mb-4">Project Pages</h2>
+        {/* Image Carousel */}
         {hasImages && (
-          <div className="relative w-full h-64 sm:h-full mb-8 rounded-lg overflow-hidden shadow-lg">
-
-            <img
-              src={project.images[currentIndex]}
-              alt={`${project.name} screenshot ${currentIndex + 1}`}
-              className="w-full h-full object-cover"
-            />
-            <button
-              onClick={handlePrev}
-              className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-2 rounded-full hover:bg-opacity-70"
-            >
-              ◀
-            </button>
-            <button
-              onClick={handleNext}
-              className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-40 text-white px-2 py-2 rounded-full hover:bg-opacity-70"
-            >
-              ▶
-            </button>
-          </div>
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="glow-effect relative mb-8 overflow-hidden rounded-xl border-2 border-blue-600 shadow-sm"
+          >
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentIndex}
+                src={project.images[currentIndex]}
+                alt={`${project.name} screenshot ${currentIndex + 1}`}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 0.5 }}
+                className="h-[400px] w-full object-contain lg:h-[600px]"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-x-0 bottom-0 flex justify-between p-4">
+              <motion.button
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0 0 15px rgba(37, 99, 235, 0.7)",
+                }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handlePrev}
+                className="glow-button rounded-lg bg-blue-600 px-4 py-2 text-white transition-all hover:bg-blue-700"
+              >
+                ◀ Prev
+              </motion.button>
+              <motion.button
+                whileHover={{
+                  scale: 1.1,
+                  boxShadow: "0 0 15px rgba(37, 99, 235, 0.7)",
+                }}
+                whileTap={{ scale: 0.9 }}
+                onClick={handleNext}
+                className="glow-button rounded-lg bg-blue-600 px-4 py-2 text-white transition-all hover:bg-blue-700"
+              >
+                Next ▶
+              </motion.button>
+            </div>
+            <div className="absolute inset-x-0 top-0 flex justify-center p-4">
+              <div className="flex space-x-2">
+                {project.images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`h-2 w-2 rounded-full ${
+                      currentIndex === index
+                        ? "glow-dot bg-blue-400"
+                        : "bg-gray-500"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </motion.div>
         )}
 
         {/* Project Description */}
-        <div className="bg-gray-800 rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-white mb-4">Project Overview</h2>
-          <p className="font-poppins text-gray-300 leading-relaxed text-justify whitespace-pre-line break-words">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          className="mb-8 rounded-xl bg-gray-800 p-8 shadow-lg"
+        >
+          <h2 className="font-poppins mb-4 text-2xl font-semibold text-white">
+            Project Overview
+          </h2>
+          <p className="font-poppins text-justify leading-relaxed text-gray-300">
             {project.description}
           </p>
-        </div>
+        </motion.div>
 
         {/* Technologies Used */}
-        <div className="bg-gray-800 rounded-lg p-6 mb-8">
-          <h2 className="text-2xl font-semibold text-white mb-4">Technologies Used</h2>
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mb-8 rounded-xl bg-gray-800 p-8 shadow-lg"
+        >
+          <h2 className="font-poppins mb-4 text-2xl font-semibold text-white">
+            Technologies Used
+          </h2>
           <div className="flex flex-wrap gap-3">
             {project.technologies.map((tech, index) => (
-              <span
+              <motion.span
                 key={index}
-                className="px-4 py-2 text-sm font-semibold text-white bg-blue-600 rounded-full shadow-sm"
+                whileHover={{ scale: 1.1 }}
+                className="rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white shadow-sm"
               >
                 {tech}
-              </span>
+              </motion.span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Project Features */}
         {project.features && (
-          <div className="bg-gray-800 rounded-lg p-6 mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">Key Features</h2>
-            <ul className="list-disc list-inside text-gray-300 space-y-2">
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="mb-8 rounded-xl bg-gray-800 p-8 shadow-lg"
+          >
+            <h2 className="font-poppins mb-4 text-2xl font-semibold text-white">
+              Key Features
+            </h2>
+            <ul className="list-inside list-disc space-y-3 text-gray-300">
               {project.features.map((feature, index) => (
-                <li key={index}>{feature}</li>
+                <motion.li
+                  key={index}
+                  initial={{ x: -20, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ duration: 0.3, delay: 0.1 * index }}
+                >
+                  {feature}
+                </motion.li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         )}
 
         {/* Repository Link */}
-        <div className="bg-gray-800 rounded-lg p-6">
-          <h2 className="text-2xl font-semibold text-white mb-4">Project Repository</h2>
-          <a
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="rounded-xl bg-gray-800 p-8 shadow-lg"
+        >
+          <h2 className="font-poppins mb-4 text-2xl font-semibold text-white">
+            Project Repository
+          </h2>
+          <motion.a
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-6 py-3 text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-all"
+            className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-lg font-semibold text-white transition-all hover:bg-blue-700 hover:shadow-lg"
           >
             Visit on GitHub
-          </a>
-        </div>
+          </motion.a>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

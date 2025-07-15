@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 function Cards({showAllProjects}) {
   const navigate = useNavigate();
-  const projectsToDisplay = showAllProjects ? ProjectsList.projects :  ProjectsList.projects.slice(0, 6);
+  const projectsToDisplay = showAllProjects ? ProjectsList.projects :  ProjectsList.projects.slice(0, 4);
 
   const handleCardClick = (projectId) => {
     navigate(`/project/${projectId}`);

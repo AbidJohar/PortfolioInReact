@@ -17,13 +17,119 @@ import {
   Eshop16,
   Eshop17,
   Eshop18,
-  Eshop19
+  Eshop19,
+  fyp1,
+  fyp2,
+  fyp3,
+  fyp4,
+  fyp5,
+  fyp6,
+  fyp7,
+  fyp8,
+  fyp9,
+  fyp10,
+  fyp11,
+  fyp12,
+  fyp13,
+  fyp14,
+  fyp15,
+  fyp16,
+  fyp17,
+  fyp18,
+  fyp19,
+  fyp20,
+  fyp21,
+  fyp22,
+  fyp23,
+  socket1,
+  socket2,
+  socket3,
+  socket4,
+  socket5,
+  socket6,
+  fd1,
+  fd2,
+  fd3,
+  fd4,
+  fd5,
+  fd6,
+  fd7,
+  fd8,
+  fd9
 } from "../utils/ProjectImages";
-
 
 export const ProjectsList = {
   projects: [
-     {
+    {
+      name: "Book publishing website + adminSite",
+      description:
+        "This is my FYP project developed over approximately 3 months with a system design mindset. It is a fully scalable platform using a microservices architecture, enabling writers to write and publish books for free, while users can read books on a subscription-based model. The platform ensures secure content storage and delivery with robust authentication and modern UI/UX.",
+      technologies: [
+        "React",
+        "AES-256",
+        "React-toast",
+        "Redis",
+        "Express rate limiter",
+        "Helmet",
+        "Cloudinary",
+        "JavaScript",
+        "Node.js",
+        "MongoDB",
+        "RESTful APIs",
+        "JWT and Bcrypt",
+        "Express",
+        "Tailwind",
+      ],
+      images: [
+        fyp13,
+        fyp14,
+        fyp15,
+        fyp16,
+        fyp17,
+        fyp18,
+        fyp19,
+        fyp20,
+        fyp22,
+        fyp23,
+        fyp1,
+        fyp2,
+        fyp3,
+        fyp4,
+        fyp5,
+        fyp6,
+        fyp7,
+        fyp8,
+        fyp9,
+        fyp10,
+        fyp11,
+        fyp12,
+        fyp21,
+      ],
+      features: [
+        "Rate limiting with Express to prevent API abuse and ensure system stability",
+        "Admin panel for reviewing, approving, and rejecting books with a secure content management system",
+        "Redis caching for optimized performance and reduced database load",
+        "Writer dashboard to create, edit, and publish books with real-time progress tracking",
+        "Secure content encryption using AES-256 for book data storage and transmission",
+        "Stored all the writer's books on cloudinary, for backup",
+        "Dynamic cart functionality where user can read the book that he saved and continue their book reading",
+        "Secure JWT-based authentication with bcrypt password hashing for user and admin accounts",
+        "RESTful APIs for CRUD operations on books,  and users",
+        "Microservices architecture for scalable and independent service deployment",
+        "Cloudinary integration for secure storage and delivery of book cover images and encrypted content",
+        "React Toast notifications for enhanced user experience with real-time feedback",
+        "Helmet for enhanced security headers to protect against common web vulnerabilities",
+        "Responsive UI built with Tailwind CSS for seamless desktop and mobile experiences",
+        "Real-time analytics for tracking total writers, readers, and book engagement",
+        "Content decryption on-the-fly for authorized users with secure key management",
+        "Error handling and logging for robust API reliability and debugging",
+        "MongoDB with Mongoose for efficient data modeling and query performance",
+        "Cross-origin resource sharing (CORS) for secure API access from the React frontend",
+      ],
+      link: "https://github.com/AbidJohar/Haroof-BE",
+    },
+
+    {
       name: "🛒 Full Stack E-Shop Website + Admin Panel",
       description:
         "A complete e-commerce platform built with the MERN stack, allowing customers to browse products, add them to the cart, and place orders. Admins can manage products, track orders, and update product information. The website supports both Stripe and Cash on Delivery payments and ensures secure user authentication and responsive design.",
@@ -37,29 +143,29 @@ export const ProjectsList = {
         "JWT and Bcrypt",
         "Cloudinary",
         "Express",
-        "Tailwind"
+        "Tailwind",
       ],
-        images: [
-    Eshop1,
-    Eshop2,
-    Eshop3,
-    Eshop4,
-    Eshop5,
-    Eshop6,
-    Eshop7,
-    Eshop8,
-    Eshop9,
-    Eshop10,
-    Eshop11,
-    Eshop12,
-    Eshop13,
-    Eshop14,
-    Eshop15,
-    Eshop16,
-    Eshop17,
-    Eshop18,
-    Eshop19
-  ],
+      images: [
+        Eshop1,
+        Eshop2,
+        Eshop3,
+        Eshop4,
+        Eshop5,
+        Eshop6,
+        Eshop7,
+        Eshop8,
+        Eshop9,
+        Eshop10,
+        Eshop11,
+        Eshop12,
+        Eshop13,
+        Eshop14,
+        Eshop15,
+        Eshop16,
+        Eshop17,
+        Eshop18,
+        Eshop19,
+      ],
       features: [
         "Secure authentication & authorization",
         "Product management with full CRUD operations",
@@ -67,11 +173,10 @@ export const ProjectsList = {
         "Real-time order tracking",
         "Admin dashboard for managing products and orders",
         "Cash on Delivery (COD) payment support",
-        "Fully responsive UI for all devices"
+        "Fully responsive UI for all devices",
       ],
-      link: "https://github.com/AbidJohar/Food_Delivery"
+      link: "https://github.com/AbidJohar/Food_Delivery",
     },
-  
 
     {
       name: "🍔 Full Stack Food Delivery Website",
@@ -86,9 +191,20 @@ export const ProjectsList = {
         "RESTful APIs",
         "JWT and Bcrypt",
         "Express",
-        "Tailwind"
+        "Tailwind",
+        "Stripe payment gateway",
       ],
-      images: [],
+      images: [
+        fd2,
+        fd3,
+        fd9,
+        fd1,
+        fd4,
+        fd5,
+        fd6,
+        fd7,
+        fd8,
+      ],
       features: [
         "Admin panel with Add Food, Order Food, and Menu pages",
         "Stripe payment gateway integration",
@@ -96,31 +212,11 @@ export const ProjectsList = {
         "Secure JWT authentication with password hashing using bcrypt",
         "RESTful APIs for CRUD operations",
         "React Toast notifications for better UX",
-        "Company-standard file structure on the backend"
+        "Company-standard file structure on the backend",
       ],
-      link: "https://github.com/AbidJohar/Food_Delivery"
+      link: "https://github.com/AbidJohar/Food_Delivery",
     },
-     {
-      name: "📌 Pinterest Clone",
-      description:
-        "A clone of Pinterest built using EJS and MongoDB. It includes all core functionalities such as user authentication, image uploads, and browsing. Users can create profiles, upload photos, and manage their own content. The backend is powered by Express.js and MongoDB for data storage.",
-      technologies: [
-        "EJS",
-        "JavaScript",
-        "Express",
-        "CSS",
-        "GitHub",
-        "MongoDB"
-      ],
-      images: [],
-      features: [
-        "User authentication: login, sign-up, logout",
-        "Profile updates and photo uploads",
-        "Image viewing and browsing functionality",
-        "MongoDB backend for user and media storage"
-      ],
-      link: "https://github.com/AbidJohar/PinterestClone"
-    },
+    
     {
       name: "💬 Real-Time Chat App (MERN + Socket.io)",
       description:
@@ -133,17 +229,47 @@ export const ProjectsList = {
         "Git",
         "GitHub",
         "Express",
-        "Node.js"
+        "Node.js",
       ],
-      images: [],
+      images: [
+        socket1,
+        socket2,
+        socket3,
+        socket4,
+        socket5,
+        socket6
+      ],
       features: [
         "One-to-one private messaging",
         "Group chat (one-to-many messaging)",
         "Real-time updates using Socket.io",
-        "Live notification counter for new messages"
+        "Live notification counter for new messages",
       ],
-      link: "https://github.com/AbidJohar/MegaProject"
+      link: "https://github.com/AbidJohar/MegaProject",
     },
+
+    {
+      name: "📌 Pinterest Clone",
+      description:
+        "A clone of Pinterest built using EJS and MongoDB. It includes all core functionalities such as user authentication, image uploads, and browsing. Users can create profiles, upload photos, and manage their own content. The backend is powered by Express.js and MongoDB for data storage.",
+      technologies: [
+        "EJS",
+        "JavaScript",
+        "Express",
+        "CSS",
+        "GitHub",
+        "MongoDB",
+      ],
+      images: [],
+      features: [
+        "User authentication: login, sign-up, logout",
+        "Profile updates and photo uploads",
+        "Image viewing and browsing functionality",
+        "MongoDB backend for user and media storage",
+      ],
+      link: "https://github.com/AbidJohar/PinterestClone",
+    },
+    
     {
       name: "📝 Mega Blog Project (with Appwrite)",
       description:
@@ -155,16 +281,16 @@ export const ProjectsList = {
         "Git",
         "GitHub",
         "Appwrite",
-        "RESTful APIs"
+        "RESTful APIs",
       ],
       images: [],
       features: [
         "Secure user authentication with Appwrite",
         "Blog management: Add, edit, delete blogs",
         "Filter view for personal or all user blogs",
-        "Efficient content management system"
+        "Efficient content management system",
       ],
-      link: "https://github.com/AbidJohar/MegaProject"
+      link: "https://github.com/AbidJohar/MegaProject",
     },
     {
       name: "🥁 Drum Machine",
@@ -177,9 +303,9 @@ export const ProjectsList = {
         "Toggle switch for power on/off",
         "Volume control",
         "Keyboard key sound mapping",
-        "Interactive and responsive UI"
+        "Interactive and responsive UI",
       ],
-      link: "https://github.com/AbidJohar/Drum_Machine"
+      link: "https://github.com/AbidJohar/Drum_Machine",
     },
     {
       name: "💸 Expense Tracker System",
@@ -191,24 +317,31 @@ export const ProjectsList = {
         "Log and categorize expenses",
         "Real-time tracking and dynamic data updates",
         "Data visualization using charts",
-        "Clean component-based architecture in React"
+        "Clean component-based architecture in React",
       ],
-      link: "https://github.com/AbidJohar/ExpenseTracker"
+      link: "https://github.com/AbidJohar/ExpenseTracker",
     },
     {
       name: "📚 BookStore Web App",
       description:
         "A full-stack Book Store web application where users can register, login, and browse books. The backend is built with Node.js and tested using Postman. The frontend is styled with Chakra UI and is designed for scalability and clean API integration.",
-      technologies: ["React", "Node.js", "JavaScript", "API", "Postman", "Chakra UI"],
+      technologies: [
+        "React",
+        "Node.js",
+        "JavaScript",
+        "API",
+        "Postman",
+        "Chakra UI",
+      ],
       images: [],
       features: [
         "Secure login and signup",
         "Backend API integration using Node.js",
         "Postman testing for API endpoints",
         "Frontend styled using Chakra UI",
-        "Ongoing project with scalable architecture"
+        "Ongoing project with scalable architecture",
       ],
-      link: "https://github.com/AbidJohar/BookStoreWeb"
+      link: "https://github.com/AbidJohar/BookStoreWeb",
     },
     {
       name: "🛠️ CRUD Operation App",
@@ -220,9 +353,9 @@ export const ProjectsList = {
         "Create, Read, Update, and Delete operations",
         "Splash screen feature on load",
         "Simple and clean user interface",
-        "Practical demonstration of full-stack app development"
+        "Practical demonstration of full-stack app development",
       ],
-      link: "https://github.com/AbidJohar/Crud-s-Operation"
+      link: "https://github.com/AbidJohar/Crud-s-Operation",
     },
     {
       name: "🖥️ Product Design Website",
@@ -234,9 +367,9 @@ export const ProjectsList = {
         "Responsive layout design",
         "Interactive UI elements",
         "Display of multiple product design samples",
-        "Frontend focus using HTML, CSS, JavaScript"
+        "Frontend focus using HTML, CSS, JavaScript",
       ],
-      link: "https://github.com/AbidJohar/Product-designer-website"
-    }
-  ]
+      link: "https://github.com/AbidJohar/Product-designer-website",
+    },
+  ],
 };

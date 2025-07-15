@@ -48,7 +48,7 @@ function About() {
         <img
           className="max-w[500px] mt-4 bg-cover bg-center bg-no-repeat md:w-[350px] lg:mt-0 lg:h-[350px] lg:w-[550px]"
           src={AboutImage}
-          alt=""
+          alt="about image"
         />
       </div>
       <hr className="w-75% mx-10 mt-16 h-[2px] bg-slate-50 opacity-10 shadow-md" />
