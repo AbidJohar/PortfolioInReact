@@ -33,7 +33,7 @@ const CursorParticles = () => {
         this.speedX = Math.random() * 2 - 1;
         this.speedY = Math.random() * 2 - 1;
         this.color = "#ffffff";
-        this.life = 60; // Shorter life
+        this.life = 80; // Shorter life
       }
       update() {
         this.x += this.speedX;
@@ -100,7 +100,7 @@ const CursorParticles = () => {
     const handleClick = (e) => {
       mouse.current.x = e.clientX;
       mouse.current.y = e.clientY;
-      addParticles(15);
+      addParticles(12);
     };
 
     window.addEventListener("mousemove", handleMouseMove);
