@@ -110,6 +110,7 @@ function ProjectDetail() {
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
                 className="h-[400px]  object-contain lg:h-[550px]"
+                loading="lazy"
               />
             </AnimatePresence>
             <div className="absolute inset-x-0 bottom-0 flex justify-between p-4">
