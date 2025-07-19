@@ -81,7 +81,11 @@ function ProjectDetail() {
           </svg>
           Back to Projects
         </motion.button>
-
+     {hasImages && 
+        <div className="mb-6 rounded-md bg-yellow-100 p-4 text-sm text-yellow-800 shadow-md">
+  <strong className="text-black">Note: </strong> Screenshots are loaded from GitHub, which may cause slight delays.
+</div>
+}
         {/* Project Header */}
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
