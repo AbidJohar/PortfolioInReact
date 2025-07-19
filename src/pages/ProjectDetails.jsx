@@ -56,7 +56,7 @@ function ProjectDetail() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="min-h-screen bg-gray-900 px-4 py-16 sm:px-6 lg:px-8"
+      className=" bg-gray-900 px-4 py-16 sm:px-6 lg:px-28"
     >
       <div className="mx-auto max-w-6xl">
         {/* Back Button */}
@@ -109,7 +109,7 @@ function ProjectDetail() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="h-[400px] w-full object-contain lg:h-[600px]"
+                className="h-[400px]  object-contain lg:h-[550px]"
               />
             </AnimatePresence>
             <div className="absolute inset-x-0 bottom-0 flex justify-between p-4">

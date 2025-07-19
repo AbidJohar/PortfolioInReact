@@ -132,9 +132,10 @@ export const ProjectsList = {
     {
       name: "🛒 Full Stack E-Shop Website + Admin Panel",
       description:
-        "A complete e-commerce platform built with the MERN stack, allowing customers to browse products, add them to the cart, and place orders. Admins can manage products, track orders, and update product information. The website supports both Stripe and Cash on Delivery payments and ensures secure user authentication and responsive design.",
+        "A complete e-commerce platform built with the MERN stack, allowing customers to browse products, add them to the cart, and place orders. Admins can manage products, track orders, and update product information. The website supports the Cash on Delivery payments and ensures secure user authentication and responsive design.",
       technologies: [
         "React",
+        "Oauth",
         "MongoDB",
         "React-toast",
         "Node.js",
@@ -184,6 +185,7 @@ export const ProjectsList = {
         "I developed a fully-fledged food delivery website using the MERN stack. The project includes both admin and customer-facing features, allowing users to browse menus, add items to a cart, and place orders, while the admin can manage food items, view orders, and update the menu. The platform is styled using Tailwind CSS and includes secure authentication.",
       technologies: [
         "React",
+        "Stripe",
         "React-toast",
         "JavaScript",
         "Node.js",
@@ -192,7 +194,6 @@ export const ProjectsList = {
         "JWT and Bcrypt",
         "Express",
         "Tailwind",
-        "Stripe payment gateway",
       ],
       images: [
         fd2,
