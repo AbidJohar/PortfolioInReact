@@ -96,6 +96,20 @@ function ProjectDetail() {
           {project.name}
         </motion.h1>
 
+        {project?.hostingLink && (
+  <motion.a
+    initial={{ opacity: 0, y: -10 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: 0.2 }}
+    href={project.hostingLink}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="mb-8 inline-block rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
+  >
+    🌐 Visit Live Project
+  </motion.a>
+)}
+
         {/* Image Carousel */}
         {hasImages && (
           <motion.div

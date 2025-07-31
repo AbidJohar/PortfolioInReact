@@ -60,6 +60,59 @@ import {
 
 export const ProjectsList = {
   projects: [
+
+ {
+      name: "🧠 AI Interior Designer",
+      description:
+        "An AI-powered web app that allows users to upload their room photos and get AI-generated interior design suggestions. Built with Next.js and TypeScript, it leverages Hugging Face Spaces (Gradio) for image generation, AWS S3 for storage, Prisma + Neon PostgreSQL for structured data, and Clerk for secure authentication. The UI is styled using Tailwind CSS and Shadcn UI, offering a sleek and responsive user experience.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "Clerk",
+        "AWS S3",
+        "Prisma ORM",
+        "PostgreSQL (Neon)",
+        "Hugging Face Spaces",
+        "Gradio",
+      ],
+      images: [], // Add your image imports here
+      features: [
+        "Deploy your own AI image generation model using Hugging Face Spaces & Gradio",
+        "Dynamic room styling using prompts (e.g., 'Modern Living Room with Wooden Finish')",
+        "Secure user login & session management via Clerk Auth",
+        "Upload room photos & prompt history to AWS S3",
+        "Store generated image metadata using Prisma ORM with PostgreSQL",
+        "Beautiful dark/light mode UI using Shadcn UI + TailwindCSS",
+        "Fully responsive with clean, minimal and elegant design",
+      ],
+      link: "https://github.com/AbidJohar/Al-Planner",
+      hostingLink: "https://al-planner.vercel.app/",
+    },
+{
+  name: "🌄 Explore Baltistan",
+  description:
+    "This is my site project that I am working on it. It's a beautifully designed web app that showcases the scenic beauty, culture, and destinations of Baltistan. Built with React.js and TypeScript, the platform offers users travel guides, photo galleries, and historical insights.The elegant UI is styled using Tailwind CSS and Shadcn UI for a smooth and immersive browsing experience.",
+  technologies: [
+    "React.js",
+    "TypeScript",
+    "Tailwind CSS",
+    "Shadcn UI",
+    "React hook form",
+    "Sonner",
+  ],
+  images: [],  
+  features: [
+    "Browse breathtaking destinations, treks, and historical sites in Baltistan",
+    "Responsive UI with light mode theme using Tailwind CSS + Shadcn UI",
+    "Optimized for all devices with clean, minimal, and modern design",
+    "Coming soon: Trip planner and interactive map feature",
+  ],
+  link: "https://github.com/AbidJohar/Explore_Baltistan", 
+  hostingLink: "https://exploretobaltistan.vercel.app/",  
+},
+
     {
       name: "Book publishing website + adminSite",
       description:
@@ -127,6 +180,7 @@ export const ProjectsList = {
         "Cross-origin resource sharing (CORS) for secure API access from the React frontend",
       ],
       link: "https://github.com/AbidJohar/Haroof-BE",
+      hostingLink: "",
     },
 
     {
@@ -177,6 +231,7 @@ export const ProjectsList = {
         "Fully responsive UI for all devices",
       ],
       link: "https://github.com/AbidJohar/Food_Delivery",
+      hostingLink: "",
     },
 
     {
@@ -216,6 +271,7 @@ export const ProjectsList = {
         "Company-standard file structure on the backend",
       ],
       link: "https://github.com/AbidJohar/Food_Delivery",
+      hostingLink: "",
     },
     
     {
@@ -246,7 +302,8 @@ export const ProjectsList = {
         "Real-time updates using Socket.io",
         "Live notification counter for new messages",
       ],
-      link: "https://github.com/AbidJohar/MegaProject",
+      link: "https://github.com/AbidJohar/Socket.IO-Project",
+      hostingLink: "",
     },
 
     {
@@ -269,6 +326,7 @@ export const ProjectsList = {
         "MongoDB backend for user and media storage",
       ],
       link: "https://github.com/AbidJohar/PinterestClone",
+      hostingLink: "",
     },
     
     {
@@ -292,85 +350,86 @@ export const ProjectsList = {
         "Efficient content management system",
       ],
       link: "https://github.com/AbidJohar/MegaProject",
+      hostingLink: "",
     },
-    {
-      name: "🥁 Drum Machine",
-      description:
-        "An interactive drum machine built using React.js, offering a fun musical experience. Users can switch between drum and piano modes, control volume, and trigger sounds using keyboard keys. The app has a visually appealing and responsive design.",
-      technologies: ["React JS", "Tailwind CSS", "Git", "GitHub"],
-      images: [],
-      features: [
-        "Piano and drum sound modes",
-        "Toggle switch for power on/off",
-        "Volume control",
-        "Keyboard key sound mapping",
-        "Interactive and responsive UI",
-      ],
-      link: "https://github.com/AbidJohar/Drum_Machine",
-    },
-    {
-      name: "💸 Expense Tracker System",
-      description:
-        "A personal finance management application built with React.js that allows users to track income and expenses. It includes real-time data updates and visualizes data with interactive charts. The app is structured using clean, reusable components.",
-      technologies: ["React JS", "JavaScript", "Git", "GitHub"],
-      images: [],
-      features: [
-        "Log and categorize expenses",
-        "Real-time tracking and dynamic data updates",
-        "Data visualization using charts",
-        "Clean component-based architecture in React",
-      ],
-      link: "https://github.com/AbidJohar/ExpenseTracker",
-    },
-    {
-      name: "📚 BookStore Web App",
-      description:
-        "A full-stack Book Store web application where users can register, login, and browse books. The backend is built with Node.js and tested using Postman. The frontend is styled with Chakra UI and is designed for scalability and clean API integration.",
-      technologies: [
-        "React",
-        "Node.js",
-        "JavaScript",
-        "API",
-        "Postman",
-        "Chakra UI",
-      ],
-      images: [],
-      features: [
-        "Secure login and signup",
-        "Backend API integration using Node.js",
-        "Postman testing for API endpoints",
-        "Frontend styled using Chakra UI",
-        "Ongoing project with scalable architecture",
-      ],
-      link: "https://github.com/AbidJohar/BookStoreWeb",
-    },
-    {
-      name: "🛠️ CRUD Operation App",
-      description:
-        "A basic full-stack CRUD application using EJS for templating and Node.js for backend logic. The app allows users to perform Create, Read, Update, and Delete operations with a splash screen and a clean, minimal UI design.",
-      technologies: ["EJS", "CSS", "Git", "GitHub"],
-      images: [],
-      features: [
-        "Create, Read, Update, and Delete operations",
-        "Splash screen feature on load",
-        "Simple and clean user interface",
-        "Practical demonstration of full-stack app development",
-      ],
-      link: "https://github.com/AbidJohar/Crud-s-Operation",
-    },
-    {
-      name: "🖥️ Product Design Website",
-      description:
-        "A frontend project showcasing various product designs using HTML, CSS, and JavaScript. It includes a fully responsive layout and interactive elements to highlight different product samples. This project emphasizes UI/UX design fundamentals.",
-      technologies: ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
-      images: [],
-      features: [
-        "Responsive layout design",
-        "Interactive UI elements",
-        "Display of multiple product design samples",
-        "Frontend focus using HTML, CSS, JavaScript",
-      ],
-      link: "https://github.com/AbidJohar/Product-designer-website",
-    },
+    // {
+    //   name: "🥁 Drum Machine",
+    //   description:
+    //     "An interactive drum machine built using React.js, offering a fun musical experience. Users can switch between drum and piano modes, control volume, and trigger sounds using keyboard keys. The app has a visually appealing and responsive design.",
+    //   technologies: ["React JS", "Tailwind CSS", "Git", "GitHub"],
+    //   images: [],
+    //   features: [
+    //     "Piano and drum sound modes",
+    //     "Toggle switch for power on/off",
+    //     "Volume control",
+    //     "Keyboard key sound mapping",
+    //     "Interactive and responsive UI",
+    //   ],
+    //   link: "https://github.com/AbidJohar/Drum_Machine",
+    // },
+    // {
+    //   name: "💸 Expense Tracker System",
+    //   description:
+    //     "A personal finance management application built with React.js that allows users to track income and expenses. It includes real-time data updates and visualizes data with interactive charts. The app is structured using clean, reusable components.",
+    //   technologies: ["React JS", "JavaScript", "Git", "GitHub"],
+    //   images: [],
+    //   features: [
+    //     "Log and categorize expenses",
+    //     "Real-time tracking and dynamic data updates",
+    //     "Data visualization using charts",
+    //     "Clean component-based architecture in React",
+    //   ],
+    //   link: "https://github.com/AbidJohar/ExpenseTracker",
+    // },
+    // {
+    //   name: "📚 BookStore Web App",
+    //   description:
+    //     "A full-stack Book Store web application where users can register, login, and browse books. The backend is built with Node.js and tested using Postman. The frontend is styled with Chakra UI and is designed for scalability and clean API integration.",
+    //   technologies: [
+    //     "React",
+    //     "Node.js",
+    //     "JavaScript",
+    //     "API",
+    //     "Postman",
+    //     "Chakra UI",
+    //   ],
+    //   images: [],
+    //   features: [
+    //     "Secure login and signup",
+    //     "Backend API integration using Node.js",
+    //     "Postman testing for API endpoints",
+    //     "Frontend styled using Chakra UI",
+    //     "Ongoing project with scalable architecture",
+    //   ],
+    //   link: "https://github.com/AbidJohar/BookStoreWeb",
+    // },
+    // {
+    //   name: "🛠️ CRUD Operation App",
+    //   description:
+    //     "A basic full-stack CRUD application using EJS for templating and Node.js for backend logic. The app allows users to perform Create, Read, Update, and Delete operations with a splash screen and a clean, minimal UI design.",
+    //   technologies: ["EJS", "CSS", "Git", "GitHub"],
+    //   images: [],
+    //   features: [
+    //     "Create, Read, Update, and Delete operations",
+    //     "Splash screen feature on load",
+    //     "Simple and clean user interface",
+    //     "Practical demonstration of full-stack app development",
+    //   ],
+    //   link: "https://github.com/AbidJohar/Crud-s-Operation",
+    // },
+    // {
+    //   name: "🖥️ Product Design Website",
+    //   description:
+    //     "A frontend project showcasing various product designs using HTML, CSS, and JavaScript. It includes a fully responsive layout and interactive elements to highlight different product samples. This project emphasizes UI/UX design fundamentals.",
+    //   technologies: ["HTML", "CSS", "JavaScript", "Git", "GitHub"],
+    //   images: [],
+    //   features: [
+    //     "Responsive layout design",
+    //     "Interactive UI elements",
+    //     "Display of multiple product design samples",
+    //     "Frontend focus using HTML, CSS, JavaScript",
+    //   ],
+    //   link: "https://github.com/AbidJohar/Product-designer-website",
+    // },
   ],
 };
