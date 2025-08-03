@@ -84,7 +84,7 @@ export const ProjectsList = {
         "Secure user login & session management via Clerk Auth",
         "Upload room photos & prompt history to AWS S3",
         "Store generated image metadata using Prisma ORM with PostgreSQL",
-        "Beautiful dark/light mode UI using Shadcn UI + TailwindCSS",
+        "Beautiful dark mode UI using Shadcn UI + TailwindCSS",
         "Fully responsive with clean, minimal and elegant design",
       ],
       link: "https://github.com/AbidJohar/Al-Planner",
