@@ -81,11 +81,11 @@ function ProjectDetail() {
           </svg>
           Back to Projects
         </motion.button>
-     {hasImages && 
-        <div className="mb-6 rounded-md bg-yellow-100 p-4 text-sm text-yellow-800 shadow-md">
-  <strong className="text-black">Note: </strong> Screenshots are loaded from GitHub, which may cause slight delays.
-</div>
-}
+        {hasImages &&
+          <div className="mb-6 rounded-md bg-yellow-100 p-4 text-sm text-yellow-800 shadow-md">
+            <strong className="text-black">Note: </strong> Screenshots are loaded from GitHub, which may cause slight delays.
+          </div>
+        }
         {/* Project Header */}
         <motion.h1
           initial={{ y: -20, opacity: 0 }}
@@ -97,18 +97,18 @@ function ProjectDetail() {
         </motion.h1>
 
         {project?.hostingLink && (
-  <motion.a
-    initial={{ opacity: 0, y: -10 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: 0.2 }}
-    href={project.hostingLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="mb-8 inline-block rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
-  >
-    🌐 Visit Live Project
-  </motion.a>
-)}
+          <motion.a
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            href={project.hostingLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mb-8 inline-block rounded-lg bg-green-600 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-green-700 hover:shadow-lg"
+          >
+            🌐 Visit Live Project
+          </motion.a>
+        )}
 
         {/* Image Carousel */}
         {hasImages && (
@@ -119,18 +119,23 @@ function ProjectDetail() {
             className="glow-effect relative mb-8 overflow-hidden rounded-xl border-2 border-blue-600 shadow-sm"
           >
             <AnimatePresence mode="wait">
-              <motion.img
+              <motion.div
                 key={currentIndex}
-                src={project.images[currentIndex]}
-                alt={`${project.name} screenshot ${currentIndex + 1}`}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="h-[400px]  object-contain lg:h-[550px]"
-                loading="lazy"
-              />
+                className="flex h-[400px] lg:h-[550px] items-center justify-center"
+              >
+                <motion.img
+                  src={project.images[currentIndex]}
+                  alt={`${project.name} screenshot ${currentIndex + 1}`}
+                  className="max-h-full max-w-full object-contain"
+                  loading="lazy"
+                />
+              </motion.div>
             </AnimatePresence>
+
             <div className="absolute inset-x-0 bottom-0 flex justify-between p-4">
               <motion.button
                 whileHover={{
@@ -161,11 +166,10 @@ function ProjectDetail() {
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`h-2 w-2 rounded-full ${
-                      currentIndex === index
+                    className={`h-2 w-2 rounded-full ${currentIndex === index
                         ? "glow-dot bg-blue-400"
                         : "bg-gray-500"
-                    }`}
+                      }`}
                   />
                 ))}
               </div>

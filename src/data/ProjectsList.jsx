@@ -55,12 +55,71 @@ import {
   fd6,
   fd7,
   fd8,
-  fd9
+  fd9,
+  renderforge1,
+  renderforge2,
+  renderforge3,
+  renderforge4,
+  renderforge5,
+  renderforge6,
+  renderforge7,
+  renderforge8,
+  renderforge9,
+  renderforge10,
+  renderforge11,
+  renderforge12,
+  renderforge13,
+  renderforge14,
+  renderforge15
 } from "../utils/ProjectImages";
 
 export const ProjectsList = {
   projects: [
-
+ {
+      name: "🖥️ RenderForge (SaaS 3D Rendering Platform)",
+      description:
+        "RenderForge is a SaaS-based 3D rendering web platform that enables users to upload 3D model files (Blender, Maya, Cinema 4D) and submit them for high-performance cloud rendering. Built with a scalable backend architecture using FastAPI, it manages render jobs, credit-based usage, and user roles through secure APIs. The system integrates a Flask-based client agent to remotely communicate with a Deadline render server, enabling distributed rendering workflows. Stripe is used for secure credit purchases with webhook-based payment verification, while Google Authentication is implemented entirely through backend endpoints. The platform features dedicated user and admin dashboards, allowing real-time render job monitoring, credit management, and system oversight, delivering a reliable and efficient rendering experience",
+      technologies: [
+        "Python",
+        "FastAPI",
+        "PostgreSQL",
+        "pg Admin 4",
+        "Oauth",
+        "Sql Alchemey",
+        "AWS thinkbox",
+        "flask",
+        "Stripe",
+      ],
+      images: [
+        renderforge8,
+        renderforge1,
+        renderforge2,
+        renderforge3,
+        renderforge5,
+        renderforge4,
+        renderforge6,
+        renderforge7,
+        renderforge9,
+        renderforge10,
+        renderforge11,
+        renderforge12,
+        renderforge13,
+        renderforge14,
+        renderforge15
+      ], // Add your image imports here
+     features: [
+  "Upload and submit 3D model files (Blender, Maya, Cinema 4D) for cloud-based rendering",
+  "Distributed rendering workflow with remote render nodes connected via a Flask-based client agent",
+  "Real-time render job status tracking and progress monitoring",
+  "Secure user authentication with Google OAuth implemented via backend APIs",
+  "Credit-based rendering system with Stripe payment integration and webhook verification",
+  "Role-based access with dedicated user and admin dashboards",
+  "Admin controls for monitoring render jobs, users, credits, and system performance",
+  "Scalable backend architecture built with FastAPI for high-performance job processing",
+  "Secure handling of render jobs, metadata, and user activity",
+  "Clean, responsive dashboard UI optimized for professional workflows",
+     ],
+    },
  {
       name: "🧠 AI Interior Designer",
       description:

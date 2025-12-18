@@ -18,6 +18,22 @@ import Eshop17 from '../Assets/projectImages/Eshop17.png';
 import Eshop18 from '../Assets/projectImages/Eshop18.png';
 import Eshop19 from '../Assets/projectImages/Eshop19.png';
 
+import renderforge1 from '../Assets/projectImages/renderforge1.jpeg'
+import renderforge2 from '../Assets/projectImages/renderforge2.jpeg'
+import renderforge3 from '../Assets/projectImages/renderforge3.jpeg'
+import renderforge4 from '../Assets/projectImages/renderforge4.jpeg'
+import renderforge5 from '../Assets/projectImages/renderforge5.jpeg'
+import renderforge6 from '../Assets/projectImages/renderforge6.jpeg'
+import renderforge7 from '../Assets/projectImages/renderforge7.jpeg'
+import renderforge8 from '../Assets/projectImages/renderforge8.jpeg'
+import renderforge9 from '../Assets/projectImages/renderforge9.jpeg'
+import renderforge10 from '../Assets/projectImages/renderforge10.jpeg'
+import renderforge11 from '../Assets/projectImages/renderforge11.jpeg'
+import renderforge12 from '../Assets/projectImages/renderforge12.jpeg'
+import renderforge13 from '../Assets/projectImages/renderforge13.jpeg'
+import renderforge14 from '../Assets/projectImages/renderforge14.jpeg'
+import renderforge15 from '../Assets/projectImages/renderforge15.jpeg'
+
 import fyp1 from '../Assets/projectImages/fyp1.jpeg';
 import fyp2 from '../Assets/projectImages/fyp2.jpeg';
 import fyp3 from '../Assets/projectImages/fyp3.jpeg';
@@ -58,6 +74,8 @@ import socket3 from '../Assets/projectImages/SocketIO3.jpeg';
 import socket4 from '../Assets/projectImages/SocketIO4.jpeg';
 import socket5 from '../Assets/projectImages/SocketIO5.jpeg';
 import socket6 from '../Assets/projectImages/SocketIO6.jpeg';
+
+
 
 
 
@@ -118,5 +136,20 @@ export {
   socket3,
   socket4,
   socket5,
-  socket6
+  socket6,
+  renderforge1,
+  renderforge2,
+  renderforge3,
+  renderforge4,
+  renderforge5,
+  renderforge6, 
+  renderforge7,
+  renderforge8,
+  renderforge9,
+  renderforge10,
+  renderforge11,
+  renderforge12,
+  renderforge13,
+  renderforge14,
+  renderforge15
 };
