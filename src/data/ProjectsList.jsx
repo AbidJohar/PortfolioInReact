@@ -75,7 +75,7 @@ import {
 
 export const ProjectsList = {
   projects: [
- {
+    {
       name: "🖥️ RenderForge (SaaS 3D Rendering Platform)",
       description:
         "RenderForge is a SaaS-based 3D rendering web platform that enables users to upload 3D model files (Blender, Maya, Cinema 4D) and submit them for high-performance cloud rendering. Built with a scalable backend architecture using FastAPI, it manages render jobs, credit-based usage, and user roles through secure APIs. The system integrates a Flask-based client agent to remotely communicate with a Deadline render server, enabling distributed rendering workflows. Stripe is used for secure credit purchases with webhook-based payment verification, while Google Authentication is implemented entirely through backend endpoints. The platform features dedicated user and admin dashboards, allowing real-time render job monitoring, credit management, and system oversight, delivering a reliable and efficient rendering experience",
@@ -107,20 +107,21 @@ export const ProjectsList = {
         renderforge14,
         renderforge15
       ], // Add your image imports here
-     features: [
-  "Upload and submit 3D model files (Blender, Maya, Cinema 4D) for cloud-based rendering",
-  "Distributed rendering workflow with remote render nodes connected via a Flask-based client agent",
-  "Real-time render job status tracking and progress monitoring",
-  "Secure user authentication with Google OAuth implemented via backend APIs",
-  "Credit-based rendering system with Stripe payment integration and webhook verification",
-  "Role-based access with dedicated user and admin dashboards",
-  "Admin controls for monitoring render jobs, users, credits, and system performance",
-  "Scalable backend architecture built with FastAPI for high-performance job processing",
-  "Secure handling of render jobs, metadata, and user activity",
-  "Clean, responsive dashboard UI optimized for professional workflows",
-     ],
+      features: [
+        "Upload and submit 3D model files (Blender, Maya, Cinema 4D) for cloud-based rendering",
+        "Distributed rendering workflow with remote render nodes connected via a Flask-based client agent",
+        "Real-time render job status tracking and progress monitoring",
+        "Secure user authentication with Google OAuth implemented via backend APIs",
+        "Credit-based rendering system with Stripe payment integration and webhook verification",
+        "Role-based access with dedicated user and admin dashboards",
+        "Admin controls for monitoring render jobs, users, credits, and system performance",
+        "Scalable backend architecture built with FastAPI for high-performance job processing",
+        "Secure handling of render jobs, metadata, and user activity",
+        "Clean, responsive dashboard UI optimized for professional workflows",
+      ],
     },
- {
+    
+    {
       name: "🧠 AI Interior Designer",
       description:
         "An AI-powered web app that allows users to upload their room photos and get AI-generated interior design suggestions. Built with Next.js and TypeScript, it leverages Hugging Face Spaces (Gradio) for image generation, AWS S3 for storage, Prisma + Neon PostgreSQL for structured data, and Clerk for secure authentication. The UI is styled using Tailwind CSS and Shadcn UI, offering a sleek and responsive user experience.",
@@ -149,28 +150,28 @@ export const ProjectsList = {
       link: "https://github.com/AbidJohar/Al-Planner",
       hostingLink: "https://al-planner.vercel.app/",
     },
-{
-  name: "🌄 Explore Baltistan",
-  description:
-    "This is my site project that I am working on it. It's a beautifully designed web app that showcases the scenic beauty, culture, and destinations of Baltistan. Built with React.js and TypeScript, the platform offers users travel guides, photo galleries, and historical insights.The elegant UI is styled using Tailwind CSS and Shadcn UI for a smooth and immersive browsing experience.",
-  technologies: [
-    "React.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "Shadcn UI",
-    "React hook form",
-    "Sonner",
-  ],
-  images: [],  
-  features: [
-    "Browse breathtaking destinations, treks, and historical sites in Baltistan",
-    "Responsive UI with light mode theme using Tailwind CSS + Shadcn UI",
-    "Optimized for all devices with clean, minimal, and modern design",
-    "Coming soon: Trip planner and interactive map feature",
-  ],
-  link: "https://github.com/AbidJohar/Explore_Baltistan", 
-  hostingLink: "https://exploretobaltistan.vercel.app/",  
-},
+    {
+      name: "🌄 Explore Baltistan",
+      description:
+        "This is my site project that I am working on it. It's a beautifully designed web app that showcases the scenic beauty, culture, and destinations of Baltistan. Built with React.js and TypeScript, the platform offers users travel guides, photo galleries, and historical insights.The elegant UI is styled using Tailwind CSS and Shadcn UI for a smooth and immersive browsing experience.",
+      technologies: [
+        "React.js",
+        "TypeScript",
+        "Tailwind CSS",
+        "Shadcn UI",
+        "React hook form",
+        "Sonner",
+      ],
+      images: [],
+      features: [
+        "Browse breathtaking destinations, treks, and historical sites in Baltistan",
+        "Responsive UI with light mode theme using Tailwind CSS + Shadcn UI",
+        "Optimized for all devices with clean, minimal, and modern design",
+        "Coming soon: Trip planner and interactive map feature",
+      ],
+      link: "https://github.com/AbidJohar/Explore_Baltistan",
+      hostingLink: "https://exploretobaltistan.vercel.app/",
+    },
 
     {
       name: "Book publishing website + adminSite",
@@ -332,7 +333,7 @@ export const ProjectsList = {
       link: "https://github.com/AbidJohar/Food_Delivery",
       hostingLink: "",
     },
-    
+
     {
       name: "💬 Real-Time Chat App (MERN + Socket.io)",
       description:
@@ -387,7 +388,7 @@ export const ProjectsList = {
       link: "https://github.com/AbidJohar/PinterestClone",
       hostingLink: "",
     },
-    
+
     {
       name: "📝 Mega Blog Project (with Appwrite)",
       description:
