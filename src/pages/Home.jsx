@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import TypewriterText from "../components/TypewriterText";
 import { UserData } from "../data/UserData";
 import {
@@ -12,36 +12,137 @@ import profilepic from '../Assets/images/Profilepic-modified.png';
 
 function Home() {
   const socialMedia = UserData.socialMedia;
+  const socialMediaIcons = { AiFillGithub, FaLinkedinIn, AiFillFacebook, AiFillInstagram };
 
-  const socialMediaIcons = {
-    AiFillGithub: AiFillGithub,
-    FaLinkedinIn: FaLinkedinIn,
-    AiFillFacebook: AiFillFacebook,
-    AiFillInstagram: AiFillInstagram,
+  // ── Spring physics state ──
+  const imgRef = useRef(null);
+  const isDragging = useRef(false);
+  const dragStart = useRef({ x: 0, y: 0 });
+  const position = useRef({ x: 0, y: 0 });
+  const velocity = useRef({ x: 0, y: 0 });
+  const lastPos = useRef({ x: 0, y: 0 });
+  const animFrame = useRef(null);
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [isDragged, setIsDragged] = useState(false);
+
+  // Spring constants — tweak for feel
+  const STIFFNESS = 0.12;   // pull-back strength
+  const DAMPING   = 0.82;   // friction / bounce decay
+  const MASS      = 0.5;
+
+  const springLoop = () => {
+    if (isDragging.current) return;
+
+    // Spring force toward origin (0,0)
+    const fx = -STIFFNESS * position.current.x;
+    const fy = -STIFFNESS * position.current.y;
+
+    velocity.current.x = (velocity.current.x + fx / MASS) * DAMPING;
+    velocity.current.y = (velocity.current.y + fy / MASS) * DAMPING;
+
+    position.current.x += velocity.current.x;
+    position.current.y += velocity.current.y;
+
+    setPos({ x: position.current.x, y: position.current.y });
+
+    const isSettled =
+      Math.abs(velocity.current.x) < 0.01 &&
+      Math.abs(velocity.current.y) < 0.01 &&
+      Math.abs(position.current.x) < 0.01 &&
+      Math.abs(position.current.y) < 0.01;
+
+    if (!isSettled) {
+      animFrame.current = requestAnimationFrame(springLoop);
+    } else {
+      position.current = { x: 0, y: 0 };
+      setPos({ x: 0, y: 0 });
+      setIsDragged(false);
+    }
   };
 
+  const onPointerDown = (e) => {
+    e.preventDefault();
+    isDragging.current = true;
+    setIsDragged(true);
+    cancelAnimationFrame(animFrame.current);
+
+    dragStart.current = {
+      x: e.clientX - position.current.x,
+      y: e.clientY - position.current.y,
+    };
+    lastPos.current = { x: e.clientX, y: e.clientY };
+    velocity.current = { x: 0, y: 0 };
+
+    imgRef.current?.setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e) => {
+    if (!isDragging.current) return;
+
+    velocity.current = {
+      x: e.clientX - lastPos.current.x,
+      y: e.clientY - lastPos.current.y,
+    };
+    lastPos.current = { x: e.clientX, y: e.clientY };
+
+    position.current = {
+      x: e.clientX - dragStart.current.x,
+      y: e.clientY - dragStart.current.y,
+    };
+
+    setPos({ x: position.current.x, y: position.current.y });
+  };
+
+  const onPointerUp = () => {
+    if (!isDragging.current) return;
+    isDragging.current = false;
+    // Kick off spring return with current drag velocity
+    animFrame.current = requestAnimationFrame(springLoop);
+  };
+
+  useEffect(() => () => cancelAnimationFrame(animFrame.current), []);
+
   return (
-    <div className="mb-28 h-auto w-full sm:mb-0 md:h-screen">
-      <div className="mx-auto mt-40 flex w-[90%] flex-col items-center sm:flex-row lg:mt-32 lg:w-[80%] lg:justify-between  ">
+    <div className="relative mb-5 sm:pb-16  h-screen w-full sm:mb-0 md:h-auto overflow-hidden">
+
+      {/* 🎥 Background Video */}
+      <video
+        autoPlay muted loop playsInline preload="auto"
+        poster="/videos/profilewhiskvideo-poster.jpg"
+        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+      >
+        <source src="/videos/profilewhiskvideo.webm" type="video/webm" />
+        <source src="/videos/profilewhiskvideo.mp4"  type="video/mp4"  />
+      </video>
+
+      {/* Dark overlay */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-[-1]" />
+
+      {/* Content */}
+      <div className="mx-auto mt-36 md:mt-16 flex w-[90%] flex-col items-center sm:flex-row lg:mt-32 lg:w-[80%] lg:justify-between">
+
+        {/* ── Left: Text ── */}
         <div className="w-full">
-          <h2 className="text-2xl font-semibold leading-tight text-white lg:text-3xl">
+          <h2 className="text-2xl font-semibold text-center md:text-start text-white lg:text-3xl">
             Hello <span className="wave">👋</span>
           </h2>
-          <h2 className="pt-2 text-2xl font-semibold leading-tight text-white">
-            My name is <strong  style={{ textShadow: '1px 2px 0  #1BFFFF' }} className="text-white text-3xl text-shadow">Abid</strong> <strong  style={{ textShadow: '1px 2px 0  #FF10F0' }} className="text-white text-3xl text-shadow">Hussain</strong>   and I&apos;m a 
+          <h2 className="pt-2 text-2xl font-semibold text-white">
+            My name is{" "}
+            <strong className="text-3xl" style={{ textShadow: "1px 2px 0 #1BFFFF" }}>Abid</strong>{" "}
+            <strong className="text-3xl" style={{ textShadow: "1px 2px 0 #FF10F0" }}>Hussain</strong>{" "}
+            and I&apos;m a
           </h2>
-          <div className="bg-gray-300 w-fit h-fit">
-          <TypewriterText />
+          <div className="bg-gray-300 w-fit">
+            <TypewriterText />
           </div>
-
-          <div className="mt-4 flex gap-8 lg:gap-0">
+          <div className="mt-4 flex gap-8 lg:gap-0 items-center justify-center md:justify-start md:items-start">
             {socialMedia.map((data, index) => {
               const IconComponent = socialMediaIcons[data.icon];
               return (
                 <button
-                  className="flex items-center justify-center rounded-lg border-none bg-transparent hover:bg-white hover:bg-opacity-20 hover:opacity-80 hover:shadow-lg lg:h-12 lg:w-24"
                   key={index}
                   onClick={() => window.open(data.url)}
+                  className="flex items-center justify-center hover:bg-white/20 lg:h-12 lg:w-24"
                 >
                   <IconComponent className="icon" />
                 </button>
@@ -50,17 +151,46 @@ function Home() {
           </div>
         </div>
 
-        <div className="mt-20 lg:mt-1">
+        {/* ── Right: Draggable spring profile pic ── */}
+        <div className="mt-20 lg:mt-1 relative select-none">
+
+          {/* Ghost outline — shows original position while dragging */}
+          <div
+            className="rounded-full border-2 border-dotted lg:w-[300px] lg:h-[300px] w-[250px] h-[250px]"
+            style={{
+              borderColor: isDragged ? 'rgba(27,255,255,0.4)' : 'transparent',
+              transition: 'border-color 0.2s ease',
+            }}
+          />
+
+          {/* Draggable image — absolutely on top of ghost */}
           <img
-            className="max-w[550px] bg-cover bg-center hover:animate-pulse duration-[10000ms]  border-black border-2  rounded-full bg-no-repeat  lg:h-[360x] lg:w-[540px]"
+            ref={imgRef}
             src={profilepic}
-            alt="" 
+            alt="Abid Hussain"
+            onPointerDown={onPointerDown}
+            onPointerMove={onPointerMove}
+            onPointerUp={onPointerUp}
+            onPointerCancel={onPointerUp}
+            style={{
+              transform: `translate(${pos.x}px, ${pos.y}px)`,
+              cursor: isDragged ? 'grabbing' : 'grab',
+              touchAction: 'none',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              
+              transition: isDragged ? 'filter 0.15s ease' : 'filter 0.3s ease',
+            }}
+            className="rounded-full border-2 border-white/40 lg:w-[300px] lg:h-[300px] w-[250px] h-[250px] object-cover"
+            draggable={false}
           />
         </div>
+
       </div>
-      <hr className="w-75% mx-10 mt-16 h-[2px] bg-slate-50 opacity-9 shadow-md" />
+
+      {/* <hr className="mx-10 mt-16 h-[2px] bg-slate-50" /> */}
     </div>
-    
   );
 }
 

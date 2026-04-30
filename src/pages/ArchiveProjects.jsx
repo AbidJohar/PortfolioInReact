@@ -3,9 +3,11 @@ import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import  Cards from '../components/Cards';
+import { ProjectsList } from "../data/ProjectsList";
 
 function ArchiveProjects() {
   const navigate = useNavigate();
+  
 
   return (
     <div className="w-full min-h-screen bg-gray-900 py-12">
@@ -27,7 +29,7 @@ function ArchiveProjects() {
         </div>
 
         {/* Cards Component */}
-        <Cards showAllProjects={true} />
+        <Cards projects={ProjectsList.projects} />
       </div>
     </div>
   );

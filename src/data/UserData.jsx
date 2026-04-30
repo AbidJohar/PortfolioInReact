@@ -1,6 +1,12 @@
 export const UserData = {
   name: "Abid Hussain",
-  about : "I’m a self-taught MERN stack developer passionate about building dynamic, responsive, and accessible web applications that work seamlessly across all devices. I specialize in crafting creative and user-centric solutions that enhance the overall user experience. With strong proficiency in React.js, Express.js, Tailwind CSS, JavaScript, HTML5, and CSS3, I bring both design sensitivity and backend logic to every project. I write clean, optimized code and follow best practices for performance and scalability. In addition to development, I’m skilled in Git version control for efficient code management and team collaboration. I’ve also gained hands-on experience with Docker, allowing me to containerize applications for consistent deployment across environments. Security is a priority in my workflow. I understand and implement preventive measures against common vulnerabilities like Cross-Site Scripting (XSS), Cross-Site Request Forgery (CSRF), and Denial of Service (DoS) attacks. I am constantly learning and evolving to stay current with modern web technologies and security practices.",
+  aboutChunks: [
+  "I am a Full Stack developer who builds dynamic, responsive, and production ready web applications from the ground up. I specialize in crafting user centric interfaces with a strong eye for design, while ensuring robust backend architecture and real-world deployment.",
+  
+  "My core stack includes React.js, Node.js, Express.js, MongoDB, Tailwind CSS, JavaScript, HTML5, and CSS3 with a focus on clean, optimized, and scalable code across every layer of the application. Beyond development, I take full ownership of the deployment lifecycle. I deploy production applications on AWS, configuring servers with Nginx as a reverse proxy for performance, reliability, and secure HTTPS delivery. I use Docker to containerize applications for consistent, environment agnostic deployments, and Git for version control and collaborative workflows.",
+
+  "Security is embedded into my development process, not added as an afterthought. I actively implement safeguards against XSS, CSRF, DoS attacks, and other common vulnerabilities to ensure every application I ship is production hardened. I'm constantly pushing my boundaries, staying current with modern web technologies, cloud infrastructure, and security best practices to deliver work that meets real industry standards.",
+],
   resumeUrl : "https://www.linkedin.com/in/abid-johar786/overlay/1747215872277/single-media-viewer/?profileId=ACoAAEXjUMkBlCy8ilHgs3Fr53Ouj9F4KvTEwEQ",
   FooterLink : "https://www.linkedin.com/in/abid-johar786/",
   socialMedia: [

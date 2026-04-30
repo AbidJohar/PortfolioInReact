@@ -36,11 +36,11 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 z-50 flex w-full shadow-md shadow-white/20 items-center justify-between text-base transition-all sm:px-4 lg:px-28 lg:pt-2
-      ${isScrolling ? "sticky" : ""}`}
+      className={`top-0 z-50 flex w-full shadow-md shadow-white/20 items-center justify-between text-base transition-all sm:px-4 lg:px-28 lg:pt-2
+      sticky`}
     >
       <div className="cursor-none">
-        <h3 className="font-semibold py-3 text-3xl tracking-wider text-white">Portfolio</h3>
+        <h3 className="font-semibold py-3 pl-4 text-2xl sm:text-3xl tracking-wider text-white font-sans">Portfolio</h3>
       </div>
       <nav className="hidden lg:block">
         <div className="cursor-pointer items-center space-x-4 sm:flex sm:flex-col sm:gap-4 lg:flex lg:flex-row lg:gap-6">

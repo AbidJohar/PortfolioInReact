@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -85,18 +86,22 @@ html {
 .font-poppins {
   font-family: "Poppins";
 }
+.font-rosca {
+  font-family: "Rosarivo", serif;
+}
 .sticky {
   transition: all 0.3s ease-out 0s !important;
   box-shadow: 0px 10px 10px 0px rgba(9, 5, 29, 0.171) !important;
   backdrop-filter: blur(15px) !important;
 }
-.navbar-bg{
-  background-color: #4158d0;
+
+.navbar-bg {
+  background-color: #0a0a1a;
   background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 0%,
-    #ffcc70 100%
+    30deg,
+    rgba(10, 241, 241, 0.714) 0%,
+    rgba(232, 120, 208, 0.485) 50%,
+    rgba(255, 16, 203, 0.485) 100%
   );
 }
 .button-UI {

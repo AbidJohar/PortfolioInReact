@@ -75,8 +75,49 @@ import {
 
 export const ProjectsList = {
   projects: [
+
     {
-      name: "🖥️ RenderForge (SaaS 3D Rendering Platform)",
+      name: "AI Powered Docs Analyst",
+      description:
+        "AI Docs Analyst is an intelligent document analysis platform that allows users to upload PDF files and interact with them using natural language. Built with a modern MERN-style architecture, the system leverages Node.js, Express, PostgreSQL, and Prisma for robust backend processing, while React powers a dynamic and responsive frontend. Integrated with the Gemini API, the platform can deeply analyze documents up to 50–60 pages and provide context-aware answers. It acts both as a document analyzer and a virtual professor, delivering detailed, human-like explanations when users ask questions about the content. The application is deployed using AWS EC2 with Elastic IP for backend services and Vercel for the frontend, ensuring scalability and high availability.",
+
+      technologies: [
+        "Node.js",
+        "Nginx",
+        "Docker",
+        "Docker compose",
+        "Github action",
+        "Express.js",
+        "PostgreSQL",
+        "Prisma",
+        "React.js",
+        "Gemini API",
+        "Neon DB",
+        "AWS EC2",
+        "Elastic IP",
+        "Vercel"
+      ],
+
+      images: [],
+
+      features: [
+        "Upload and analyze PDF documents up to 50–60 pages efficiently",
+        "AI-powered document understanding using Gemini API",
+        "Ask questions about documents and receive detailed, professor-like explanations",
+        "Context-aware responses based on full document content",
+        "Acts as both a document analyzer and an interactive learning assistant",
+        "Fast and scalable backend built with Node.js, Express, and PostgreSQL using Prisma ORM",
+        "Cloud deployment using AWS EC2 with Elastic IP for stable backend access",
+        "Frontend deployed on Vercel for fast global delivery",
+        "Secure and structured data handling with Neon PostgreSQL database",
+        "Clean and responsive UI for smooth user experience"
+      ],
+      link : "https://github.com/AbidJohar/AI-Powered-Docs-Analyst",
+      hostingLink: "https://ai-powered-docs-analyst.vercel.app/"
+    },
+
+    {
+      name: "RenderForge (SaaS Rendering Platform)",
       description:
         "RenderForge is a SaaS-based 3D rendering web platform that enables users to upload 3D model files (Blender, Maya, Cinema 4D) and submit them for high-performance cloud rendering. Built with a scalable backend architecture using FastAPI, it manages render jobs, credit-based usage, and user roles through secure APIs. The system integrates a Flask-based client agent to remotely communicate with a Deadline render server, enabling distributed rendering workflows. Stripe is used for secure credit purchases with webhook-based payment verification, while Google Authentication is implemented entirely through backend endpoints. The platform features dedicated user and admin dashboards, allowing real-time render job monitoring, credit management, and system oversight, delivering a reliable and efficient rendering experience",
       technologies: [
@@ -120,9 +161,9 @@ export const ProjectsList = {
         "Clean, responsive dashboard UI optimized for professional workflows",
       ],
     },
-    
+
     {
-      name: "🧠 AI Interior Designer",
+      name: "AI Interior Designer",
       description:
         "An AI-powered web app that allows users to upload their room photos and get AI-generated interior design suggestions. Built with Next.js and TypeScript, it leverages Hugging Face Spaces (Gradio) for image generation, AWS S3 for storage, Prisma + Neon PostgreSQL for structured data, and Clerk for secure authentication. The UI is styled using Tailwind CSS and Shadcn UI, offering a sleek and responsive user experience.",
       technologies: [
@@ -151,7 +192,7 @@ export const ProjectsList = {
       hostingLink: "https://al-planner.vercel.app/",
     },
     {
-      name: "🌄 Explore Baltistan",
+      name: "Explore Baltistan",
       description:
         "This is my site project that I am working on it. It's a beautifully designed web app that showcases the scenic beauty, culture, and destinations of Baltistan. Built with React.js and TypeScript, the platform offers users travel guides, photo galleries, and historical insights.The elegant UI is styled using Tailwind CSS and Shadcn UI for a smooth and immersive browsing experience.",
       technologies: [
@@ -244,7 +285,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "🛒 Full Stack E-Shop Website + Admin Panel",
+      name: "Full Stack E-Shop Website + Admin Panel",
       description:
         "A complete e-commerce platform built with the MERN stack, allowing customers to browse products, add them to the cart, and place orders. Admins can manage products, track orders, and update product information. The website supports the Cash on Delivery payments and ensures secure user authentication and responsive design.",
       technologies: [
@@ -295,7 +336,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "🍔 Full Stack Food Delivery Website",
+      name: "Full Stack Food Delivery Website",
       description:
         "I developed a fully-fledged food delivery website using the MERN stack. The project includes both admin and customer-facing features, allowing users to browse menus, add items to a cart, and place orders, while the admin can manage food items, view orders, and update the menu. The platform is styled using Tailwind CSS and includes secure authentication.",
       technologies: [
@@ -335,7 +376,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "💬 Real-Time Chat App (MERN + Socket.io)",
+      name: "Real-Time Chat App (MERN + Socket.io)",
       description:
         "This is a real-time chat application that allows users to send and receive messages instantly. Built with the MERN stack and Socket.io, it supports both private and group chats. The app provides real-time message updates, notifications, and a responsive user interface.",
       technologies: [
@@ -367,7 +408,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "📌 Pinterest Clone",
+      name: "Pinterest Clone",
       description:
         "A clone of Pinterest built using EJS and MongoDB. It includes all core functionalities such as user authentication, image uploads, and browsing. Users can create profiles, upload photos, and manage their own content. The backend is powered by Express.js and MongoDB for data storage.",
       technologies: [
@@ -390,7 +431,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "📝 Mega Blog Project (with Appwrite)",
+      name: "Mega Blog Project (with Appwrite)",
       description:
         "A powerful blogging platform using Appwrite as the backend service. Users can securely register, login, and manage blog posts. The project supports CRUD operations for blogs, filters for personal and all-user views, and a fully styled responsive frontend using Tailwind CSS.",
       technologies: [
