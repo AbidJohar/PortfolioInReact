@@ -23,7 +23,7 @@ function ArchiveProjects() {
 
         {/* Heading */}
         <div className="flex justify-center mb-8">
-          <h1 className="font-poppins text-3xl sm:text-4xl font-bold text-white tracking-wider text-center">
+          <h1 className="font-Geometra text-3xl sm:text-4xl  text-white tracking-wider text-center">
             All Projects
           </h1>
         </div>

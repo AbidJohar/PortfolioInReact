@@ -2,6 +2,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Rosarivo&display=swap');
 
+@font-face {
+   
+  font-family: 'Geometra'; 
+  src: url('./fonts/Geometra.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RocketBrush';
+  src: url('./fonts/Rocket Brush.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,6 +46,17 @@ html {
 #no-scroll {
   overflow: hidden;
   height: 100vh;
+}
+
+.font-Geometra {
+  font-family: 'Geometra';  /* fix both spellings */
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+.font-RocketBrush {
+  font-family: 'RocketBrush';  /* fix both spellings */
+  letter-spacing: 0.05em;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
 #preloader {

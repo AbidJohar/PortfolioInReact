@@ -5,7 +5,7 @@ function Contact() {
   return (
     <div className="mb-10  lg:mt-30 pt-10  h-fit  flex w-full items-center justify-center md:h-fit lg:mb-4">
       <div className="flex flex-col items-center justify-center ">
-        <h2 className="pb-6 pt-12 mt-7 text-center text-3xl tracking-wider text-white lg:text-5xl">
+        <h2 className="pb-6 font-RocketBrush pt-12 mt-7 text-center text-3xl tracking-wider text-white lg:text-5xl">
           Get In Touch
         </h2>
         <p className="font-poppins mx-auto px-2 pb-6 text-center text-sm tracking-wider text-white lg:w-[50%]">

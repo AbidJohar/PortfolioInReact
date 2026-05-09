@@ -2,7 +2,13 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Geometra: ['Geometra', 'sans-serif'],
+        RocketBrush: ['RocketBrush', 'sans-serif'], // add this
+      }
+
+    },
   },
   plugins: [],
 };

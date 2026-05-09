@@ -9,6 +9,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import profilepic from '../Assets/images/Profilepic-modified.png';
+import Header from "../components/Header";
 
 function Home() {
   const socialMedia = UserData.socialMedia;
@@ -27,8 +28,8 @@ function Home() {
 
   // Spring constants — tweak for feel
   const STIFFNESS = 0.12;   // pull-back strength
-  const DAMPING   = 0.82;   // friction / bounce decay
-  const MASS      = 0.5;
+  const DAMPING = 0.82;   // friction / bounce decay
+  const MASS = 0.5;
 
   const springLoop = () => {
     if (isDragging.current) return;
@@ -105,6 +106,20 @@ function Home() {
   return (
     <div className="relative mb-5 sm:pb-16  h-screen w-full sm:mb-0 md:h-auto overflow-hidden">
 
+
+      <h3 className="cursor-none hidden lg:block absolute top-[1.8rem] py-3 pl-6 text-4xl  tracking-wider text-white font-RocketBrush">Portfolio.</h3>
+
+
+      {/* navbar */}
+      <Header />
+
+      <div className="absolute hidden lg:block right-7 top-7">
+        <a href="../../public/AbidHussainCV.pdf" download>
+          <button className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-black bg-white shadow-xl hover:bg-gray-400 hover:text-black">
+            Resume
+          </button>
+        </a>
+      </div>
       {/* 🎥 Background Video */}
       <video
         autoPlay muted loop playsInline preload="auto"
@@ -112,7 +127,7 @@ function Home() {
         className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
       >
         <source src="/videos/profilewhiskvideo.webm" type="video/webm" />
-        <source src="/videos/profilewhiskvideo.mp4"  type="video/mp4"  />
+        <source src="/videos/profilewhiskvideo.mp4" type="video/mp4" />
       </video>
 
       {/* Dark overlay */}
@@ -128,9 +143,9 @@ function Home() {
           </h2>
           <h2 className="pt-2 text-2xl font-semibold text-white">
             My name is{" "}
-            <strong className="text-3xl" style={{ textShadow: "1px 2px 0 #1BFFFF" }}>Abid</strong>{" "}
-            <strong className="text-3xl" style={{ textShadow: "1px 2px 0 #FF10F0" }}>Hussain</strong>{" "}
-            and I&apos;m a
+            <strong className="text-4xl px-2 font-RocketBrush" style={{ textShadow: "1px 2px 0 #1BFFFF" }}>Abid</strong>{" "}
+            <strong className="text-4xl  font-RocketBrush" style={{ textShadow: "1px 2px 0 #FF10F0" }}>Hussain</strong>{" "}
+            <span className="pl-32 sm:pl-0">and I&apos;m a</span>
           </h2>
           <div className="bg-gray-300 w-fit">
             <TypewriterText />
@@ -179,12 +194,13 @@ function Home() {
               position: 'absolute',
               top: 0,
               left: 0,
-              
+
               transition: isDragged ? 'filter 0.15s ease' : 'filter 0.3s ease',
             }}
             className="rounded-full border-2 border-white/40 lg:w-[300px] lg:h-[300px] w-[250px] h-[250px] object-cover"
             draggable={false}
           />
+          <p className="absolute top-32 left-[4.5rem] sm:top-36 sm:left-24 bg-white/40  text-gray-600 px-3 py-1 rounded-full">Drag Over</p>
         </div>
 
       </div>

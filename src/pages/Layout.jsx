@@ -7,17 +7,26 @@ import Contact from "./Contact";
 import Footer from "../components/Footer";
 import Project from "./Project";
 import { Element } from "react-scroll";
+import Experience from "./Experience";
+import MusicPlayer from "../components/MusicPlayer";
 
 function Layout() {
   return (
     <>
-      <Header />
+     
       <Element name="Home-section">
         <Home />
       </Element>
-      <Element name="About-section">
+      <MusicPlayer />
+
+       <Element name="About-section">
         <About />
       </Element>
+
+      <Element name="Experience-section">
+        <Experience />
+      </Element>
+
       <Element name="Project-section">
         <Project />
       </Element>

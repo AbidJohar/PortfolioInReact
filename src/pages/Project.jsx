@@ -8,10 +8,10 @@ function Project() {
   const featuredProjects = ProjectsList.projects.slice(0, 4);
 
   return (
-    <div className="w-full min-h-screen md:mt-36 lg:mt-96 py-6">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 className="font-poppins text-3xl sm:text-4xl font-bold text-center text-white tracking-wider mb-10">
-          Projects
+    <div className="w-full min-h-screen md:mt-10  py-6">
+      <div className="max-w-7xl mx-auto px-8 sm:px-[5rem] ">
+        <h3 className="font-RocketBrush text-3xl sm:text-5xl  font-bold text-start text-white tracking-wider mb-8 ">
+          MY WORKS
         </h3>
         <div className="w-full">
           <Cards projects={featuredProjects} />

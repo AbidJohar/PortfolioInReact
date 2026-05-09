@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 function Cards({ projects }) {
   const navigate = useNavigate();
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  
+
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3  overflow-hidden ">
@@ -16,7 +16,7 @@ function Cards({ projects }) {
           onClick={() => navigate(`/project/${index}`)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="relative overflow-hidden rounded-tl-xl rounded-br-xl cursor-pointer bg-[#0d0d1cdc]"
+          className="relative overflow-hidden rounded-tl-3xl rounded-br-3xl cursor-pointer bg-[#0d0d1cdc]"
           style={{ minHeight: '250px' }}
         >
 
@@ -32,20 +32,7 @@ function Cards({ projects }) {
             <div className="absolute inset-0  bg-gradient-to-t from-black/90 via-black/50 to-black/40" />
           </div>
 
-          {/* ── Static base layer ── */}
-          <div
-            className="absolute inset-0 transition-opacity duration-1000"
-            style={{ opacity: hoveredIndex === index ? 0 : 1 }}
-          >
-            {/* Top accent line */}
-            <div
-              className="absolute top-0 left-0 h-[3px] transition-all duration-1000"
-              style={{
-                width: hoveredIndex === index ? '100%' : '40px',
-                background: 'linear-gradient(90deg, #1BFFFF, #FF10F0)',
-              }}
-            />
-          </div>
+     
 
           {/* ── Card content ── */}
           <div className="relative z-10 flex flex-col gap-7 h-full p-8" style={{ minHeight: '250px' }}>
@@ -54,10 +41,10 @@ function Cards({ projects }) {
             <div className="flex items-start justify-between">
               <span
                 className="font-mono text-xs  tracking-widest transition-colors duration-300"
-                style={{ 
+                style={{
                   color: hoveredIndex === index ? '#1BFFFF' : '#1BFFFF',
                   opacity: hoveredIndex === index ? 1 : 0.4
-                  }}
+                }}
               >
                 {String(index + 1).padStart(2, '0')}
               </span>
@@ -69,7 +56,7 @@ function Cards({ projects }) {
                   transform: hoveredIndex === index ? 'translate(0,0)' : 'translate(-6px, 6px)',
                 }}
               >
-                <path d="M3 15L15 3M15 3H7M15 3V11" stroke="#1BFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M3 15L15 3M15 3H7M15 3V11" stroke="#1BFFFF" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </div>
 
@@ -82,7 +69,7 @@ function Cards({ projects }) {
                     key={i}
                     className="text-[10px] font-mono tracking-wider uppercase px-2 py-1 rounded transition-all duration-300"
                     style={{
-                      color:'#1BFFFF',
+                      color: '#1BFFFF',
                       border: '0.5px solid #1BFFFF',
                       background: 'transparent',
                       opacity: hoveredIndex === index ? 1 : 0.4
@@ -100,9 +87,8 @@ function Cards({ projects }) {
 
               {/* Project name */}
               <h2
-                className="font-bold leading-tight mb-2 transition-colors duration-300"
+                className="font-Geometra leading-tight mb-2 transition-colors duration-300"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
                   fontSize: 'clamp(1.2rem, 2.5vw, 1.6rem)',
                   color: '#ffffff',
                   letterSpacing: '-0.01em',

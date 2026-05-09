@@ -106,10 +106,10 @@ function ProjectDetail() {
               <motion.h1
                 initial={{ y: 20, opacity: 0 }} animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: 0.1 }}
+                className="font-Geometra"
                 style={{
-                  fontFamily: "'Playfair Display', serif",
-                  fontSize: "clamp(2rem, 5vw, 3.5rem)",
-                  fontWeight: 700, color: "#ffffff",
+                  fontSize: "clamp(2rem, 4vw, 3.5rem)",
+                  fontWeight: 200, color: "#ffffff",
                   lineHeight: 1.1, margin: 0,
                   letterSpacing: "-0.02em",
                 }}
@@ -118,7 +118,7 @@ function ProjectDetail() {
               </motion.h1>
 
               {/* Gradient rule under title */}
-              <motion.div
+              {/* <motion.div
                 initial={{ scaleX: 0 }} animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
                 style={{
@@ -126,7 +126,7 @@ function ProjectDetail() {
                   background: `linear-gradient(90deg, ${CYAN}, ${PINK})`,
                   transformOrigin: "left",
                 }}
-              />
+              /> */}
 
               {/* Live link */}
               {project?.hostingLink && (
@@ -292,10 +292,20 @@ function ProjectDetail() {
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "1.5rem" }}>
-              <div style={{ width: "3px", height: "18px", background: `linear-gradient(180deg, ${CYAN}, ${PINK})`, borderRadius: "2px" }} />
-              <h2 style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.2rem", fontWeight: 700, color: "#fff", margin: 0 }}>
-                Key Features
-              </h2>
+              <div style={{
+            width: "3px", height: "18px",
+            background: "#17F8FF",
+            borderRadius: "1px",
+          }} />
+          <h2 
+          className="font-Geometra"
+          style={{
+             
+            fontSize: "1.2rem", fontWeight: 700,
+            color: "#fff", margin: 0,
+          }}>
+            Key Features
+          </h2>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "12px" }}>
               {project.features.map((feature, i) => (
@@ -338,7 +348,9 @@ function ProjectDetail() {
             <p style={{ fontFamily: "monospace", fontSize: "11px", color: "rgba(255,255,255,0.3)", letterSpacing: "0.12em", textTransform: "uppercase", margin: "0 0 4px" }}>
               Source Code
             </p>
-            <p style={{ fontFamily: "'Playfair Display', serif", fontSize: "1.1rem", color: "#fff", margin: 0 }}>
+            <p 
+            className="font-Geometra"
+            style={{  fontSize: "1.1rem", color: "#fff", margin: 0 }}>
               View on GitHub
             </p>
           </div>

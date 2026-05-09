@@ -2,6 +2,7 @@ export const skillsData = [
   "html",
   "CSS",
   "Javascript",
+  "Typescript",
   "C++",
   "React",
   "ViteJS",
@@ -10,13 +11,13 @@ export const skillsData = [
   "Bootstrap",
   "Tailwind",
   "MongoDB",
+  "PostgreSQL",
   "nodejs",
   "express",
-  "Microsoft Office",
   "Python",
-  "Typescript",
   "Electron.js",
   "Next JS",
+  "AWS",
   "Docker"
 ];
 
@@ -63,6 +64,7 @@ export const skillsData = [
     Matlab
     Swift
     Ruby
+    Ubuntu
     Kotlin
     Go
     PHP
@@ -73,7 +75,6 @@ export const skillsData = [
     Git
     Figma
     Canva
-    Ubuntu
     Bootstrap
     MongoDB
     Tailwind

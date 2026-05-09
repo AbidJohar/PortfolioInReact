@@ -1,32 +1,30 @@
 import { useEffect, useState } from "react";
 import { Link, Events, scrollSpy } from "react-scroll";
 import { CgMenuRight } from "react-icons/cg";
+import { CgClose } from "react-icons/cg";
 import { UserData } from "../data/UserData";
 
 const Header = () => {
   const [isScrolling, setisScrolling] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
+  const [activeSection, setActiveSection] = useState("Home-section");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
 
   const { resumeUrl } = UserData;
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const isCurrentScrolled = scrollTop > 0;
-      setisScrolling(isCurrentScrolled);
+      setisScrolling(window.scrollY > 0);
     };
 
     window.addEventListener("scroll", handleScroll);
-    Events.scrollEvent.register("begin", function (to) {
-      setActiveSection(to);
-    });
 
+    // Only update spy, don't manually register "begin" events 
+    // that force re-renders during animation
     scrollSpy.update();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      Events.scrollEvent.remove("begin");
     };
   }, []);
 
@@ -36,39 +34,88 @@ const Header = () => {
 
   return (
     <header
-      className={`top-0 z-50 flex w-full shadow-md shadow-white/20 items-center justify-between text-base transition-all sm:px-4 lg:px-28 lg:pt-2
-      sticky`}
+      className={`sticky top-0  z-50 flex w-full  bg-blue-950     items-center justify-between text-base transition-all  sm:px-4 lg:px-90  lg:top-6 lg:left-80 lg:w-[474px] lg:px-2 lg:border-[2px] lg:border-white  lg:py-1.5 lg:rounded-full lg:bg-white/70    
+      `}
     >
-      <div className="cursor-none">
-        <h3 className="font-semibold py-3 pl-4 text-2xl sm:text-3xl tracking-wider text-white font-sans">Portfolio</h3>
+      <div className="cursor-none lg:hidden">
+        <h3 className=" py-3 pl-6 text-2xl sm:text-3xl tracking-wider text-white font-RocketBrush">Portfolio</h3>
       </div>
-      <nav className="hidden lg:block">
-        <div className="cursor-pointer items-center space-x-4 sm:flex sm:flex-col sm:gap-4 lg:flex lg:flex-row lg:gap-6">
-          <Link activeClass="active" spy={true} smooth={true} offset={-250} duration={500} to="Home-section">
-            <p className={activeSection === "Home-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>Home</p>
-          </Link>
-          <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="About-section">
-            <p className={activeSection === "About-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>About</p>
-          </Link>
-          <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="Project-section">
-            <p className={activeSection === "Project-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-4"}>Projects</p>
-          </Link>
-          <Link activeClass="active" spy={true} smooth={true} offset={50} duration={500} to="Contact-section">
-            <p className={activeSection === "Contact-section" ? "active" : "text-white hover:text-gray-400 hover:font-bold hover:underline underline-offset-2"}>Contact</p>
-          </Link>
-          <div>
-            <button onClick={() => window.open(resumeUrl)} className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-black bg-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
-          </div>
+      <nav className="hidden lg:block ">
+        <div className="cursor-pointer items-center  justify-center space-x-2 sm:flex sm:flex-col   sm:gap-4 lg:flex lg:flex-row lg:gap-3">
+          {[
+            { id: "Home-section", label: "Home", offset: -250 },
+            { id: "About-section", label: "About", offset: -150 },
+            { id: "Project-section", label: "Projects", offset: -150 },
+            { id: "Contact-section", label: "Contact", offset: 50 },
+          ].map((item) => (
+            <Link
+              key={item.id}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={item.offset}
+              duration={500}
+              to={item.id}
+              isDynamic={true}
+              onSetActive={() => setActiveSection(item.id)}
+              className="relative group "
+            >
+              <p
+                className={`
+            px-3 py-1.5 rounded-full transition-all duration-300 ease-out text-md tracking-widest uppercase font-medium 
+            ${activeSection === item.id
+                    ? "text-white  bg-[#21302E]  tracking-normal  "
+                    : "text-black hover:text-white hover:bg-[#21302E] border border-transparent"
+                  }
+          `}
+              >
+                {item.label}
+              </p>
+
+
+            </Link>
+          ))}
         </div>
       </nav>
-      <div className="block lg:hidden">
+
+
+      {/* ── Mobile menu toggle button ── */}
+      <div className="lg:hidden flex justify-end flex-1  ">
         <button className="mr-5 block text-white hover:text-gray-400 focus:outline-none" onClick={toggleMobileMenu}>
-          <CgMenuRight size={32} />
+          {mobileMenuOpen ? <CgClose size={32} /> : <CgMenuRight size={32} />}
         </button>
       </div>
-      {mobileMenuOpen && (
-        <nav className="absolute left-0 top-full block w-full lg:hidden bg-black">
-          <div className="navbar-bg flex flex-col items-center space-y-4 py-4">
+
+      {/* ── Mobile nav panel — slides in from right ── */}
+      <div style={{ perspective: '1200px', perspectiveOrigin: 'right center' }}>
+        {/* bg-[#16161f] */}
+        <nav
+          className={`
+      fixed top-7 -right-4 h-screen w-56
+      border-l-2 border-white/90
+      bg-black/85
+      flex flex-col py-5
+      z-50 lg:hidden
+      origin-right
+      transition-transform duration-1000
+      [transition-timing-function:cubic-bezier(0.4,0,0.2,1)]
+      ${mobileMenuOpen ? "[transform:rotateY(0deg)]" : "[transform:rotateY(-100deg)]"}
+    `}
+        >
+          {/* Door knob — vertical center on left edge */}
+          <div className="absolute left-4 top-[45%] -translate-y-1/2 flex flex-col items-center gap-1.5 pointer-events-none">
+            <div className="w-px h-5 bg-white/90 rounded-full" />
+            <div className="w-3 h-3 rounded-full bg-white/70 border border-white/25" />
+            <div className="w-px h-5 bg-white/90 rounded-full" />
+          </div>
+
+          {/* Hinge marks on left edge */}
+          <div className="absolute left-0 top-[45%] -translate-y-1/2 flex flex-col gap-1 pointer-events-none">
+            <div className="w-1 h-6 bg-white/90 rounded-r-sm" />
+            <div className="w-1 h-6 bg-white/90 rounded-r-sm" />
+          </div>
+
+          <div className="flex flex-col   items-center  justify-center h-full space-y-6 py-4">
             <Link activeClass="active" spy={true} smooth={true} offset={-250} duration={500} to="Home-section" onClick={toggleMobileMenu}>
               <p className={activeSection === "Home-section" ? "active" : "text-white hover:text-gray-400"}>Home</p>
             </Link>
@@ -82,11 +129,11 @@ const Header = () => {
               <p className={activeSection === "Contact-section" ? "active" : "text-white hover:text-gray-400"}>Contact</p>
             </Link>
             <div>
-              <button onClick={() => window.open(resumeUrl)} className="border border-white rounded-full px-4 py-1.5 font-bold tracking-wider text-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
+              <button onClick={() => window.open(resumeUrl)} className="border border-white button-UI rounded-full px-4 py-1.5 font-bold tracking-wider text-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
             </div>
           </div>
         </nav>
-      )}
+      </div>
     </header>
   );
 };
