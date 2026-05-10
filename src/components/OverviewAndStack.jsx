@@ -8,7 +8,7 @@ const PALETTE = [
 const R = 36;
 const D = R * 2;
 const GAP = 5;
-const BPAD = R + 6;
+const BPAD = R + 2;
 
 // ── Drift (idle) ──
 const DRIFT_MAX = 0.30;   // max speed while floating
@@ -169,7 +169,7 @@ function usePhysics(technologies, containerRef) {
         if (x - R < 2) { x = R + 2; vx = Math.abs(vx) * BOUNCE; }
         if (x + R > W - 2) { x = W - R - 2; vx = -Math.abs(vx) * BOUNCE; }
         if (y - R < 2) { y = R + 2; vy = Math.abs(vy) * BOUNCE; }
-        if (y + R > H - BPAD) { y = H - BPAD - R; vy = -Math.abs(vy) * BOUNCE; }
+        if (y + R > H ) { y = H  - R; vy = -Math.abs(vy) * BOUNCE; }
 
         tags[i] = { ...tags[i], x, y, vx, vy };
 
@@ -271,7 +271,7 @@ export default function OverviewAndStack({ project }) {
           style={{
             position: "relative",
             flex: 1,
-            minHeight: "320px",
+            minHeight: "340px",
             overflow: "hidden",
             borderRadius: "10px",
             border: `0.5px solid ${active ? "rgba(23,248,255,0.1)" : "rgba(255,255,255,0.04)"}`,
@@ -317,26 +317,6 @@ export default function OverviewAndStack({ project }) {
             );
           })}
 
-          <p
-            style={{
-              position: "absolute",
-              bottom: "10px",
-              width: "100%",
-              textAlign: "center",
-              fontSize: "9px",
-              fontFamily: "monospace",
-              color: "rgba(255,255,255,0.12)",
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              pointerEvents: "none",
-              userSelect: "none",
-              margin: 0,
-              opacity: hinted ? 1 : 0,
-              transition: "opacity 0.5s ease",
-            }}
-          >
-            hover to attract · watch them drift
-          </p>
         </div>
       </div>
     </div>

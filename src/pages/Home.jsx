@@ -104,16 +104,16 @@ function Home() {
   useEffect(() => () => cancelAnimationFrame(animFrame.current), []);
 
   return (
-    <div className="relative mb-5 sm:pb-16  h-screen w-full sm:mb-0 md:h-auto overflow-hidden">
+    <div className="relative mb-5 sm:pb-16    h-screen w-full sm:mb-0 md:h-auto overflow-hidden">
 
 
-      <h3 className="cursor-none hidden lg:block absolute top-[1.8rem] py-3 pl-6 text-4xl  tracking-wider text-white font-RocketBrush">Portfolio.</h3>
+      <h3 className="cursor-none hidden lg:block absolute top-[1.8rem] py-3 pl-6 text-3xl xl:text-4xl  tracking-wider text-white font-RocketBrush">Portfolio.</h3>
 
 
       {/* navbar */}
       <Header />
 
-      <div className="absolute hidden lg:block right-7 top-7">
+      <div className="absolute hidden lg:block right-7 top-8 ">
         <a href="../../public/AbidHussainCV.pdf" download>
           <button className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-black bg-white shadow-xl hover:bg-gray-400 hover:text-black">
             Resume
@@ -133,8 +133,9 @@ function Home() {
       {/* Dark overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-[-1]" />
 
+      
       {/* Content */}
-      <div className="mx-auto mt-36 md:mt-16 flex w-[90%] flex-col items-center sm:flex-row lg:mt-32 lg:w-[80%] lg:justify-between">
+      <div className="max-w-7xl xl:h-[38rem] w-full mx-auto px-8 sm:px-[5rem] mt-36 md:mt-16 flex flex-col items-center sm:flex-row lg:mt-32 lg:justify-between">
 
         {/* ── Left: Text ── */}
         <div className="w-full">

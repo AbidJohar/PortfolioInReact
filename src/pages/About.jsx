@@ -31,88 +31,90 @@ function About() {
   const doubled = [...skillsData, ...skillsData];
 
   return (
-    <section className="w-full font-sans  mt-14 pb-0">
+    <section className="w-full font-sans mt-14 pb-0">
 
-      {/* ── Main grid ── */}
-      <div className="w-full px-8 sm:px-12 lg:px-20 xl:px-32 grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] gap-x-28 items-start">
+      {/* ── Same container as Project section ── */}
+      <div className="max-w-7xl mx-auto px-8 sm:px-[5rem]">
 
-        {/* Left — copy */}
-        <div className="min-w-0">
-           <h3 className="font-RocketBrush text-3xl sm:text-5xl font-bold text-start text-white tracking-wider mb-3 ">
-                    ABOUT ME
-                </h3>
+        <h3 className="font-RocketBrush text-3xl sm:text-5xl font-bold text-start text-white tracking-wider mb-8">
+          ABOUT ME
+        </h3>
 
-          <div className="text-gray-400 text-sm lg:text-base leading-relaxed mb-2">
-            {about}
-          </div>
+        {/* ── Main grid ── */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr] xl:gap-x-48 gap-x-36 items-start">
 
-          {/* ── Animated skill strip ── */}
-          <div className="mt-8">
-            <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-white/30 mb-3">
-              Tech Stack
-            </p>
+          {/* Left — copy */}
+          <div className="min-w-0">
+            <div className="text-gray-400 text-sm lg:text-base leading-relaxed mb-2">
+              {about}
+            </div>
 
-            <div
-              className="relative overflow-hidden"
-              style={{
-                maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-                WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
-              }}
-            >
+            {/* ── Animated skill strip ── */}
+            <div className="mt-8">
+              <p className="text-[9px] font-bold tracking-[0.25em] uppercase text-white/30 mb-3">
+                Tech Stack
+              </p>
+
               <div
-                ref={trackRef}
-                className="flex gap-3 w-max"
-                onMouseEnter={() => (pausedRef.current = true)}
-                onMouseLeave={() => (pausedRef.current = false)}
+                className="relative overflow-hidden"
+                style={{
+                  maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                  WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                }}
               >
-                {doubled.map((skill, id) => (
-                  <div
-                    key={id}
-                    className="group flex flex-col items-center justify-center gap-1.5
-                               w-[80px] h-[80px] flex-shrink-0
-                               border border-white/10 rounded-lg
-                               hover:border-white/40 hover:bg-white/5
-                               transition-all duration-200 cursor-default"
-                  >
-                    <img
-                      src={skillsImage(skill)}
-                      alt={skill}
-                      className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-200"
-                    />
-                    <span className="text-[7px] font-bold tracking-wider uppercase text-white/80 group-hover:text-white/60 transition-colors duration-200 leading-none">
-                      {skill}
-                    </span>
-                  </div>
-                ))}
+                <div
+                  ref={trackRef}
+                  className="flex gap-3 w-max"
+                  onMouseEnter={() => (pausedRef.current = true)}
+                  onMouseLeave={() => (pausedRef.current = false)}
+                >
+                  {doubled.map((skill, id) => (
+                    <div
+                      key={id}
+                      className="group flex flex-col items-center justify-center gap-1.5
+                                 w-[80px] h-[80px] flex-shrink-0
+                                 border border-white/10 rounded-lg
+                                 hover:border-white/40 hover:bg-white/5
+                                 transition-all duration-200 cursor-default"
+                    >
+                      <img
+                        src={skillsImage(skill)}
+                        alt={skill}
+                        className="w-8 h-8 object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-200"
+                      />
+                      <span className="text-[7px] font-bold tracking-wider uppercase text-white/80 group-hover:text-white/60 transition-colors duration-200 leading-none">
+                        {skill}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Vertical rule */}
-        <div className="hidden md:block bg-white/10 w-px self-stretch" />
+          {/* Vertical rule */}
+          <div className="hidden md:block bg-white/10 w-px self-stretch" />
 
-        {/* Right — stats */}
-        <div className="self-start grid grid-cols-2 md:grid-cols-1 gap-6 pt-10 md:pt-1 min-w-0">
-          {[
-            { num: "1.5+",   label: "Years of experience" },
-            { num: "20+", label: "Projects built" },
-            { num: "4+", label: "Production Projects" },
-            { num: "400+", label: "Git commits" },
-          ].map(({ num, label }) => (
-            <div
-              key={label}
-              className="border-l-2 border-white/20 pl-4 group hover:border-white transition-colors duration-200"
-            >
-              <span className="font-Geometra text-4xl text-white block leading-none">{num}</span>
-              <span className="text-[11px] tracking-widest uppercase text-white/40 mt-1 block">{label}</span>
-            </div>
-          ))}
+          {/* Right — stats */}
+          <div className="self-start grid grid-cols-2 md:grid-cols-1 gap-6 pt-10 md:pt-1 min-w-0">
+            {[
+              { num: "1.5+", label: "Years of experience" },
+              { num: "20+", label: "Projects built" },
+              { num: "4+", label: "Production Projects" },
+              { num: "400+", label: "Git commits" },
+            ].map(({ num, label }) => (
+              <div
+                key={label}
+                className="border-l-2 border-white/20 pl-4 group hover:border-white transition-colors duration-200"
+              >
+                <span className="font-Geometra text-4xl text-white block leading-none">{num}</span>
+                <span className="text-[11px] tracking-widest uppercase text-white/40 mt-1 block">{label}</span>
+              </div>
+            ))}
+          </div>
+
         </div>
       </div>
-
-       
-
     </section>
   );
 }

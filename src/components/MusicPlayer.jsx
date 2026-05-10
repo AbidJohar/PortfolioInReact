@@ -9,16 +9,26 @@ const MusicPlayer = ({ src }) => {
   const soundRef = useRef(null);
 
   useEffect(() => {
-    // Initialize the sound
+    // Prevent duplicate instances (React StrictMode double-invoke)
+    if (soundRef.current) {
+      soundRef.current.unload();
+    }
+
     soundRef.current = new Howl({
       src: [epic],
       loop: true,
-      volume: 0.4, // Keep it subtle for portfolios
-      html5: true, // Better for large files/background music
+      volume: 0.4,
+      // html5: true,
+      // pool: 1, //  
     });
 
-    return () => soundRef.current.unload();
-  }, [src]);
+    return () => {
+      if (soundRef.current) {
+        soundRef.current.unload();
+        soundRef.current = null;
+      }
+    };
+  }, []);
 
   const togglePlay = () => {
     if (playing) {

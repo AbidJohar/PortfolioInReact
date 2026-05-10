@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0  z-50 flex w-full  bg-blue-950     items-center justify-between text-base transition-all  sm:px-4 lg:px-90  lg:top-6 lg:left-80 lg:w-[474px] lg:px-2 lg:border-[2px] lg:border-white  lg:py-1.5 lg:rounded-full lg:bg-white/70    
+      className={`sticky top-0  z-50 flex w-full  bg-blue-950    items-center justify-between text-base transition-all  sm:px-4 lg:px-90  lg:top-6 lg:left-[16rem] lg:w-[635px] lg:px-2 lg:border-[2px] lg:border-white  lg:py-1.5 lg:rounded-full lg:bg-white/70  xl:left-[34rem] 
       `}
     >
       <div className="cursor-none lg:hidden">
@@ -45,6 +45,7 @@ const Header = () => {
           {[
             { id: "Home-section", label: "Home", offset: -250 },
             { id: "About-section", label: "About", offset: -150 },
+            { id: "Experience-section", label: "Experience", offset: 50 },
             { id: "Project-section", label: "Projects", offset: -150 },
             { id: "Contact-section", label: "Contact", offset: 50 },
           ].map((item) => (
@@ -122,12 +123,16 @@ const Header = () => {
             <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="About-section" onClick={toggleMobileMenu}>
               <p className={activeSection === "About-section" ? "active" : "text-white hover:text-gray-400"}>About</p>
             </Link>
+            <Link activeClass="active" spy={true} smooth={true} offset={50} duration={500} to="Contact-section" onClick={toggleMobileMenu}>
+              <p className={activeSection === "Experience-section" ? "active" : "text-white hover:text-gray-400"}>Experience</p>
+            </Link>
             <Link activeClass="active" spy={true} smooth={true} offset={-150} duration={500} to="Project-section" onClick={toggleMobileMenu}>
               <p className={activeSection === "Project-section" ? "active" : "text-white hover:text-gray-400"}>Projects</p>
             </Link>
             <Link activeClass="active" spy={true} smooth={true} offset={50} duration={500} to="Contact-section" onClick={toggleMobileMenu}>
               <p className={activeSection === "Contact-section" ? "active" : "text-white hover:text-gray-400"}>Contact</p>
             </Link>
+
             <div>
               <button onClick={() => window.open(resumeUrl)} className="border border-white button-UI rounded-full px-4 py-1.5 font-bold tracking-wider text-white shadow-xl hover:bg-gray-400 hover:text-black">Resume</button>
             </div>
