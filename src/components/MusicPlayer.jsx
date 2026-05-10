@@ -1,47 +1,41 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { Howl } from 'howler';
-import { Volume2, VolumeX, Music } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 import epic from "../Assets/music/epic1.mp3";
 import { motion } from 'framer-motion';
 
-const MusicPlayer = ({ src }) => {
-  const [playing, setPlaying] = useState(false);
-  const soundRef = useRef(null);
+// Module-level singleton — never recreated
+let globalSound = null;
 
-  useEffect(() => {
-    // Prevent duplicate instances (React StrictMode double-invoke)
-    if (soundRef.current) {
-      soundRef.current.unload();
-    }
-
-    soundRef.current = new Howl({
+const getSound = () => {
+  if (!globalSound) {
+    globalSound = new Howl({
       src: [epic],
       loop: true,
-      volume: 0.4,
-      // html5: true,
-      // pool: 1, //  
+      volume: 0.2,      // ← lower from 0.4 to 0.2
+      html5: true,      // ← ADD this back — streams audio instead of
+      //   fully decoding into Web Audio buffer
+      //   prevents the "explosion" on loud files
     });
+  }
+  return globalSound;
+};
 
-    return () => {
-      if (soundRef.current) {
-        soundRef.current.unload();
-        soundRef.current = null;
-      }
-    };
-  }, []);
+const MusicPlayer = () => {
+  const [playing, setPlaying] = useState(false);
 
   const togglePlay = () => {
+    const sound = getSound();
     if (playing) {
-      soundRef.current.pause();
+      sound.pause();
     } else {
-      soundRef.current.play();
+      sound.play();
     }
     setPlaying(!playing);
   };
 
   return (
-    <div className="fixed bottom-2 left-[13.5rem] sm:bottom-8  sm:left-8 z-[100] flex items-center gap-4">
-      {/* Visual Equalizer Animation */}
+    <div className="fixed bottom-2 left-[13.5rem] sm:bottom-8 sm:left-8 z-[100] flex items-center gap-4">
       <div className="flex items-end gap-[3px] h-4">
         {[1, 2, 3, 4].map((i) => (
           <motion.div
@@ -53,7 +47,6 @@ const MusicPlayer = ({ src }) => {
         ))}
       </div>
 
-      {/* The Toggle Button */}
       <button
         onClick={togglePlay}
         className="group relative flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-white/10 px-4 py-2 rounded-full hover:bg-white/10 transition-all shadow-2xl"
@@ -61,12 +54,9 @@ const MusicPlayer = ({ src }) => {
         <div className="text-white/70 group-hover:text-white transition-colors">
           {playing ? <Volume2 size={18} /> : <VolumeX size={18} />}
         </div>
-
         <span className="text-[10px] font-mono text-nowrap uppercase tracking-[0.2em] text-white/50 group-hover:text-white">
           {playing ? "Sound On" : "Play Music?"}
         </span>
-
-        {/* Hover Hint */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           whileHover={{ opacity: 1, y: 0 }}

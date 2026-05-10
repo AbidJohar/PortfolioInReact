@@ -34,7 +34,7 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0  z-50 flex w-full  bg-blue-950    items-center justify-between text-base transition-all  sm:px-4 lg:px-90  lg:top-6 lg:left-[16rem] lg:w-[635px] lg:px-2 lg:border-[2px] lg:border-white  lg:py-1.5 lg:rounded-full lg:bg-white/70  xl:left-[34rem] 
+      className={`sticky top-0  z-50 flex w-full  bg-blue-950    items-center justify-between text-base transition-all  sm:px-4 lg:px-90  lg:top-6 lg:left-[16rem] lg:w-[635px] lg:px-2 lg:bg-white/5 lg:backdrop-blur-xl lg:border lg:border-white/20  lg:py-1.5 lg:rounded-full    xl:left-[34rem] 
       `}
     >
       <div className="cursor-none lg:hidden">
@@ -66,7 +66,7 @@ const Header = () => {
             px-3 py-1.5 rounded-full transition-all duration-300 ease-out text-md tracking-widest uppercase font-medium 
             ${activeSection === item.id
                     ? "text-white  bg-[#21302E]  tracking-normal  "
-                    : "text-black hover:text-white hover:bg-[#21302E] border border-transparent"
+                    : "text-white hover:text-white hover:bg-[#21302E] border border-transparent"
                   }
           `}
               >

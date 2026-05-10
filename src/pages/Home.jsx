@@ -144,8 +144,8 @@ function Home() {
           </h2>
           <h2 className="pt-2 text-2xl font-semibold text-white">
             My name is{" "}
-            <strong className="text-4xl px-2 font-RocketBrush" style={{ textShadow: "1px 2px 0 #1BFFFF" }}>Abid</strong>{" "}
-            <strong className="text-4xl  font-RocketBrush" style={{ textShadow: "1px 2px 0 #FF10F0" }}>Hussain</strong>{" "}
+            <strong className="lg:text-4xl text-3xl   px-2 font-RocketBrush" style={{ textShadow: "1px 2px 0 #1BFFFF" }}>Abid</strong>{" "}
+            <strong className="lg:text-4xl text-3xl   font-RocketBrush" style={{ textShadow: "1px 2px 0 #FF10F0" }}>Hussain</strong>{" "}
             <span className="pl-32 sm:pl-0">and I&apos;m a</span>
           </h2>
           <div className="bg-gray-300 w-fit">
