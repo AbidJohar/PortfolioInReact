@@ -117,7 +117,7 @@ export const ProjectsList = {
     },
 
     {
-      name: "RenderForge (SaaS Rendering Platform)",
+      name: "RenderForge",
       description:
         "RenderForge is a SaaS-based 3D rendering web platform that enables users to upload 3D model files (Blender, Maya, Cinema 4D) and submit them for high-performance cloud rendering. Built with a scalable backend architecture using FastAPI, it manages render jobs, credit-based usage, and user roles through secure APIs. The system integrates a Flask-based client agent to remotely communicate with a Deadline render server, enabling distributed rendering workflows. Stripe is used for secure credit purchases with webhook-based payment verification, while Google Authentication is implemented entirely through backend endpoints. The platform features dedicated user and admin dashboards, allowing real-time render job monitoring, credit management, and system oversight, delivering a reliable and efficient rendering experience",
       technologies: [

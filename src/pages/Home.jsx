@@ -8,7 +8,7 @@ import {
   AiFillFacebook,
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
-import profilepic from '../Assets/images/Profilepic-modified.png';
+import profilepic from '../Assets/images/Profilepic-modified.webp';
 import Header from "../components/Header";
 
 function Home() {
@@ -133,7 +133,7 @@ function Home() {
       {/* Dark overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black/20 z-[-1]" />
 
-      
+
       {/* Content */}
       <div className="max-w-7xl xl:h-[38rem] w-full mx-auto px-8 sm:px-[5rem] mt-36 md:mt-16 flex flex-col items-center sm:flex-row lg:mt-32 lg:justify-between">
 
@@ -182,6 +182,8 @@ function Home() {
           {/* Draggable image — absolutely on top of ghost */}
           <img
             ref={imgRef}
+            fetchPriority="high"
+            loading="eager"
             src={profilepic}
             alt="Abid Hussain"
             onPointerDown={onPointerDown}

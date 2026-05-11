@@ -5,7 +5,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
-import Preloader from "../src/components/Pre"; 
+import Preloader from "../src/components/Pre";
 import Cursor from "../src/components/Cursor";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
-    }, 1000);
+    }, 3000);
 
     return () => clearTimeout(timer);
   }, []);

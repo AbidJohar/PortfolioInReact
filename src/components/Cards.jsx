@@ -16,23 +16,39 @@ function Cards({ projects }) {
           onClick={() => navigate(`/project/${index}`)}
           onMouseEnter={() => setHoveredIndex(index)}
           onMouseLeave={() => setHoveredIndex(null)}
-          className="relative overflow-hidden rounded-tl-3xl rounded-br-3xl cursor-pointer bg-[#0d0d1cdc]"
+          className="relative overflow-hidden rounded-tl-3xl border border-white/15 rounded-br-3xl cursor-pointer bg-[#0d0d1cdc]"
           style={{ minHeight: '250px' }}
         >
 
-          {/* ── Background with clip-path wipe from top ── */}
+          {/* Radial glow behind the circle */}
           <div
-            className="absolute inset-0   transition-all duration-1000 ease-in-out"
+            className="absolute inset-0 pointer-events-none"
             style={{
-              clipPath: hoveredIndex === index
-                ? 'inset(0% 0% 0% 0%)'
-                : 'inset(0% 0% 100% 0%)',
+              background: 'radial-gradient(circle at 90% 0%, rgba(27, 255, 255, 0.08) 0%, transparent 60%)',
+            }}
+          />
+
+          {/* Circle overlay */}
+          <div
+            className="absolute inset-0 transition-all duration-1000 ease-in-out"
+            style={{
+              clipPath: 'circle(50% at 90% 0%)',
             }}
           >
-            <div className="absolute inset-0  bg-gradient-to-t from-black/90 via-black/50 to-black/40" />
+            <div
+              className="absolute inset-0"
+              style={{
+                background: 'radial-gradient(circle at 120% 0%, rgba(27,255,255,0.12) 0%, rgba(0,0,0,0.6) 50%, transparent 100%)',
+              }}
+            />
           </div>
 
-     
+
+          {/* // style={{
+            //   clipPath: hoveredIndex === index
+            //     ? 'circle(80% at 90% 0%)'   // fully expanded — covers whole card
+            //     : 'circle(0% at 50% 0%)',    // collapsed to a point at top center
+            // }} */}
 
           {/* ── Card content ── */}
           <div className="relative z-10 flex flex-col gap-7 h-full p-8" style={{ minHeight: '250px' }}>
@@ -110,13 +126,7 @@ function Cards({ projects }) {
                 className="flex items-center gap-2 mt-5 transition-all duration-300"
                 style={{ opacity: hoveredIndex === index ? 1 : 0.4 }}
               >
-                <div
-                  className="h-px transition-all duration-500"
-                  style={{
-                    width: hoveredIndex === index ? '32px' : '12px',
-                    background: 'linear-gradient(90deg, #1BFFFF, #FF10F0)',
-                  }}
-                />
+
                 <span
                   className="text-xs font-mono tracking-widest uppercase"
                   style={{ color: '#1BFFFF' }}
