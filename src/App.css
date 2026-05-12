@@ -27,13 +27,11 @@ body {
   font-family: "Raleway", serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #34d6c6;
-  background-image: linear-gradient(
-    43deg,
-    #272625 0%,
-    #05172b 46%,
-    #050338 100%
-  );
+  /* background-color: #34d6c6; */
+ 
+  background-color: #08080f; /* ✅ matches ProjectDetail's bg, no flash */
+  background-image: linear-gradient(43deg, #272625 0%, #05172b 46%, #050338 100%);
+
 }
 html {
   scroll-behavior: smooth;

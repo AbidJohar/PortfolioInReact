@@ -14,7 +14,7 @@ import "./App.css";
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ArchiveProjects = lazy(() => import("./pages/ArchiveProjects"));
-const ProjectDetail = lazy(() => import("./pages/ProjectDetails"));
+import ProjectDetail from "./pages/ProjectDetails";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -32,7 +32,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       updateLoad(false);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -40,9 +40,9 @@ function App() {
   return (
     <div className="App ">
       <Cursor />
-      <Suspense fallback={<Preloader load={load} />} >
         <Router basename="/">
           <Preloader load={load} />
+           <Suspense fallback={null} >
           <div className="App" id={load ? "no-scroll" : "scroll"}>
             <ScrollToTopOnRouteChange />
             <Routes>
@@ -54,8 +54,8 @@ function App() {
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>
-        </Router>
       </Suspense>
+        </Router>
     </div>
   );
 }

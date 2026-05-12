@@ -14,6 +14,7 @@ function Layout() {
   return (
     <>
      
+      <Header/>
       <Element name="Home-section">
         <Home />
       </Element>

@@ -27,9 +27,9 @@ function Home() {
   const [isDragged, setIsDragged] = useState(false);
 
   // Spring constants — tweak for feel
-  const STIFFNESS = 0.12;   // pull-back strength
-  const DAMPING = 0.82;   // friction / bounce decay
-  const MASS = 0.5;
+  const STIFFNESS = 0.08;   // pull-back strength
+  const DAMPING = 0.75;   // friction / bounce decay
+  const MASS = 0.6;
 
   const springLoop = () => {
     if (isDragging.current) return;
@@ -104,14 +104,12 @@ function Home() {
   useEffect(() => () => cancelAnimationFrame(animFrame.current), []);
 
   return (
-    <div className="relative mb-5 sm:pb-16    h-screen w-full sm:mb-0 md:h-auto overflow-hidden">
-
+    <div className="relative mb-5 sm:pb-16    h-screen lg:h-[33rem] xl:h-[53rem] w-full sm:mb-0 md:h-auto overflow-hidden">
 
       <h3 className="cursor-none hidden lg:block absolute top-[1.8rem] py-3 pl-6 text-3xl xl:text-4xl  tracking-wider text-white font-RocketBrush">Portfolio.</h3>
 
-
       {/* navbar */}
-      <Header />
+      {/* <Header /> */}
 
       <div className="absolute hidden lg:block right-7 top-8 ">
         <a href="../../public/AbidHussainCV.pdf" download>
@@ -124,7 +122,7 @@ function Home() {
       <video
         autoPlay muted loop playsInline preload="auto"
         poster="/videos/profilewhiskvideo-poster.jpg"
-        className="absolute top-0 left-0 w-full h-full object-cover z-[-1]"
+        className="absolute top-0 left-0 w-full h-screen lg:h-[33rem] xl:h-[53rem] object-cover z-[-1]"
       >
         <source src="/videos/profilewhiskvideo.webm" type="video/webm" />
         <source src="/videos/profilewhiskvideo.mp4" type="video/mp4" />

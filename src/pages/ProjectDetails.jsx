@@ -49,7 +49,7 @@ function ProjectDetail() {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.2 }}
       style={{ background: "#08080f", minHeight: "100vh", paddingBottom: "6rem" }}
     >
       {/* ── Hero strip ── */}
