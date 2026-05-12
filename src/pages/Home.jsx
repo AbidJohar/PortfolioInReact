@@ -112,7 +112,7 @@ function Home() {
       {/* <Header /> */}
 
       <div className="absolute hidden lg:block right-7 top-8 ">
-        <a href="../../public/AbidHussainCV.pdf" download>
+        <a href="/AbidHussainCV.pdf" target="_blank" rel="noreferrer">
           <button className="button-UI w-[120px] rounded-lg px-4 py-1.5 font-bold tracking-wider text-black bg-white shadow-xl hover:bg-gray-400 hover:text-black">
             Resume
           </button>
