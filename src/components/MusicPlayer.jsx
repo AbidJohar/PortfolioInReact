@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Howl } from 'howler';
 import { Volume2, VolumeX } from 'lucide-react';
 import epic from "../Assets/music/epic1.mp3";
 import { motion } from 'framer-motion';
@@ -7,15 +6,14 @@ import { motion } from 'framer-motion';
 // Module-level singleton — never recreated
 let globalSound = null;
 
-const getSound = () => {
+const getSound = async () => {
   if (!globalSound) {
+    const { Howl } = await import('howler'); // ← loaded only when needed
     globalSound = new Howl({
       src: [epic],
       loop: true,
-      volume: 0.2,      // ← lower from 0.4 to 0.2
-      html5: true,      // ← ADD this back — streams audio instead of
-      //   fully decoding into Web Audio buffer
-      //   prevents the "explosion" on loud files
+      volume: 0.2,
+      html5: true,
     });
   }
   return globalSound;
@@ -23,15 +21,22 @@ const getSound = () => {
 
 const MusicPlayer = () => {
   const [playing, setPlaying] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const togglePlay = () => {
-    const sound = getSound();
+  const togglePlay = async () => {
+    if (loading) return; // prevent double-clicks while Howler is loading
+
     if (playing) {
-      sound.pause();
-    } else {
-      sound.play();
+      globalSound?.pause();
+      setPlaying(false);
+      return;
     }
-    setPlaying(!playing);
+
+    setLoading(true);
+    const sound = await getSound();
+    sound.play();
+    setPlaying(true);
+    setLoading(false);
   };
 
   return (
@@ -55,7 +60,7 @@ const MusicPlayer = () => {
           {playing ? <Volume2 size={18} /> : <VolumeX size={18} />}
         </div>
         <span className="text-[10px] font-mono text-nowrap uppercase tracking-[0.2em] text-white/50 group-hover:text-white">
-          {playing ? "Sound On" : "Play Music?"}
+          {loading ? "Loading..." : playing ? "Sound On" : "Play Music?"}
         </span>
         <motion.div
           initial={{ opacity: 0, y: 10 }}

@@ -6,15 +6,15 @@ import {
   useLocation,
 } from "react-router-dom";
 import Preloader from "../src/components/Pre";
-import Cursor from "../src/components/Cursor";
 import Layout from "./pages/Layout";
 import NotFound from "./pages/NotFound";
 import "./App.css";
-// import ProjectDetail from "./pages/ProjectDetails";
+
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const ArchiveProjects = lazy(() => import("./pages/ArchiveProjects"));
-import ProjectDetail from "./pages/ProjectDetails";
+const ProjectDetail = lazy(() => import("./pages/ProjectDetails"));
+import SplashCursor from "./components/SplashCursor";
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation();
@@ -38,11 +38,11 @@ function App() {
   }, []);
 
   return (
-    <div className="App ">
-      <Cursor />
-        <Router basename="/">
-          <Preloader load={load} />
-           <Suspense fallback={null} >
+    <div className="App">
+        <SplashCursor />
+      <Router basename="/">
+        <Preloader load={load} />
+        <Suspense fallback={null}>
           <div className="App" id={load ? "no-scroll" : "scroll"}>
             <ScrollToTopOnRouteChange />
             <Routes>
@@ -54,8 +54,8 @@ function App() {
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>
-      </Suspense>
-        </Router>
+        </Suspense>
+      </Router>
     </div>
   );
 }
